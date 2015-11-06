@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78751BED44E500AEB08E /* AppDelegate.swift */; };
+		075D78781BED44E500AEB08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78771BED44E500AEB08E /* ViewController.swift */; };
+		075D787B1BED44E500AEB08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D78791BED44E500AEB08E /* Main.storyboard */; };
+		075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075D787C1BED44E500AEB08E /* Assets.xcassets */; };
+		075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */; };
+		075D788B1BED44E500AEB08E /* GathurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D788A1BED44E500AEB08E /* GathurTests.swift */; };
+		075D78961BED44E500AEB08E /* GathurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78951BED44E500AEB08E /* GathurUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		075D78871BED44E500AEB08E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075D786A1BED44E500AEB08E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 075D78711BED44E500AEB08E;
+			remoteInfo = Gathur;
+		};
+		075D78921BED44E500AEB08E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075D786A1BED44E500AEB08E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 075D78711BED44E500AEB08E;
+			remoteInfo = Gathur;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		075D78721BED44E500AEB08E /* Gathur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gathur.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		075D78751BED44E500AEB08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		075D78771BED44E500AEB08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		075D787A1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		075D787C1BED44E500AEB08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		075D787F1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		075D78811BED44E500AEB08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		075D78861BED44E500AEB08E /* GathurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GathurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		075D788A1BED44E500AEB08E /* GathurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GathurTests.swift; sourceTree = "<group>"; };
+		075D788C1BED44E500AEB08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		075D78911BED44E500AEB08E /* GathurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GathurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		075D78951BED44E500AEB08E /* GathurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GathurUITests.swift; sourceTree = "<group>"; };
+		075D78971BED44E500AEB08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		075D786F1BED44E500AEB08E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D78831BED44E500AEB08E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D788E1BED44E500AEB08E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		075D78691BED44E500AEB08E = {
+			isa = PBXGroup;
+			children = (
+				075D78741BED44E500AEB08E /* Gathur */,
+				075D78891BED44E500AEB08E /* GathurTests */,
+				075D78941BED44E500AEB08E /* GathurUITests */,
+				075D78731BED44E500AEB08E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		075D78731BED44E500AEB08E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				075D78721BED44E500AEB08E /* Gathur.app */,
+				075D78861BED44E500AEB08E /* GathurTests.xctest */,
+				075D78911BED44E500AEB08E /* GathurUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		075D78741BED44E500AEB08E /* Gathur */ = {
+			isa = PBXGroup;
+			children = (
+				075D78751BED44E500AEB08E /* AppDelegate.swift */,
+				075D78771BED44E500AEB08E /* ViewController.swift */,
+				075D78791BED44E500AEB08E /* Main.storyboard */,
+				075D787C1BED44E500AEB08E /* Assets.xcassets */,
+				075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */,
+				075D78811BED44E500AEB08E /* Info.plist */,
+			);
+			path = Gathur;
+			sourceTree = "<group>";
+		};
+		075D78891BED44E500AEB08E /* GathurTests */ = {
+			isa = PBXGroup;
+			children = (
+				075D788A1BED44E500AEB08E /* GathurTests.swift */,
+				075D788C1BED44E500AEB08E /* Info.plist */,
+			);
+			path = GathurTests;
+			sourceTree = "<group>";
+		};
+		075D78941BED44E500AEB08E /* GathurUITests */ = {
+			isa = PBXGroup;
+			children = (
+				075D78951BED44E500AEB08E /* GathurUITests.swift */,
+				075D78971BED44E500AEB08E /* Info.plist */,
+			);
+			path = GathurUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		075D78711BED44E500AEB08E /* Gathur */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 075D789A1BED44E500AEB08E /* Build configuration list for PBXNativeTarget "Gathur" */;
+			buildPhases = (
+				075D786E1BED44E500AEB08E /* Sources */,
+				075D786F1BED44E500AEB08E /* Frameworks */,
+				075D78701BED44E500AEB08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gathur;
+			productName = Gathur;
+			productReference = 075D78721BED44E500AEB08E /* Gathur.app */;
+			productType = "com.apple.product-type.application";
+		};
+		075D78851BED44E500AEB08E /* GathurTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 075D789D1BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurTests" */;
+			buildPhases = (
+				075D78821BED44E500AEB08E /* Sources */,
+				075D78831BED44E500AEB08E /* Frameworks */,
+				075D78841BED44E500AEB08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				075D78881BED44E500AEB08E /* PBXTargetDependency */,
+			);
+			name = GathurTests;
+			productName = GathurTests;
+			productReference = 075D78861BED44E500AEB08E /* GathurTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		075D78901BED44E500AEB08E /* GathurUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 075D78A01BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurUITests" */;
+			buildPhases = (
+				075D788D1BED44E500AEB08E /* Sources */,
+				075D788E1BED44E500AEB08E /* Frameworks */,
+				075D788F1BED44E500AEB08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				075D78931BED44E500AEB08E /* PBXTargetDependency */,
+			);
+			name = GathurUITests;
+			productName = GathurUITests;
+			productReference = 075D78911BED44E500AEB08E /* GathurUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		075D786A1BED44E500AEB08E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Kathryn Ager";
+				TargetAttributes = {
+					075D78711BED44E500AEB08E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					075D78851BED44E500AEB08E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 075D78711BED44E500AEB08E;
+					};
+					075D78901BED44E500AEB08E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 075D78711BED44E500AEB08E;
+					};
+				};
+			};
+			buildConfigurationList = 075D786D1BED44E500AEB08E /* Build configuration list for PBXProject "Gathur" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 075D78691BED44E500AEB08E;
+			productRefGroup = 075D78731BED44E500AEB08E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				075D78711BED44E500AEB08E /* Gathur */,
+				075D78851BED44E500AEB08E /* GathurTests */,
+				075D78901BED44E500AEB08E /* GathurUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		075D78701BED44E500AEB08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */,
+				075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */,
+				075D787B1BED44E500AEB08E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D78841BED44E500AEB08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D788F1BED44E500AEB08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		075D786E1BED44E500AEB08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075D78781BED44E500AEB08E /* ViewController.swift in Sources */,
+				075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D78821BED44E500AEB08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075D788B1BED44E500AEB08E /* GathurTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		075D788D1BED44E500AEB08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075D78961BED44E500AEB08E /* GathurUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		075D78881BED44E500AEB08E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 075D78711BED44E500AEB08E /* Gathur */;
+			targetProxy = 075D78871BED44E500AEB08E /* PBXContainerItemProxy */;
+		};
+		075D78931BED44E500AEB08E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 075D78711BED44E500AEB08E /* Gathur */;
+			targetProxy = 075D78921BED44E500AEB08E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		075D78791BED44E500AEB08E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				075D787A1BED44E500AEB08E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				075D787F1BED44E500AEB08E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		075D78981BED44E500AEB08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		075D78991BED44E500AEB08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		075D789B1BED44E500AEB08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gathur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		075D789C1BED44E500AEB08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gathur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		075D789E1BED44E500AEB08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GathurTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.GathurTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gathur.app/Gathur";
+			};
+			name = Debug;
+		};
+		075D789F1BED44E500AEB08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GathurTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.GathurTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gathur.app/Gathur";
+			};
+			name = Release;
+		};
+		075D78A11BED44E500AEB08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GathurUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.GathurUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gathur;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		075D78A21BED44E500AEB08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GathurUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.GathurUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gathur;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		075D786D1BED44E500AEB08E /* Build configuration list for PBXProject "Gathur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075D78981BED44E500AEB08E /* Debug */,
+				075D78991BED44E500AEB08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		075D789A1BED44E500AEB08E /* Build configuration list for PBXNativeTarget "Gathur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075D789B1BED44E500AEB08E /* Debug */,
+				075D789C1BED44E500AEB08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		075D789D1BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075D789E1BED44E500AEB08E /* Debug */,
+				075D789F1BED44E500AEB08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		075D78A01BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075D78A11BED44E500AEB08E /* Debug */,
+				075D78A21BED44E500AEB08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 075D786A1BED44E500AEB08E /* Project object */;
+}
