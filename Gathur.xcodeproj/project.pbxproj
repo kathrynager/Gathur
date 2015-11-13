@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0712FB311BF5778C0090EF1F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB301BF5778C0090EF1F /* TableViewCell.swift */; };
+		0712FB331BF577B40090EF1F /* GathuringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB321BF577B40090EF1F /* GathuringViewController.swift */; };
+		0712FB351BF579220090EF1F /* GathurObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB341BF579220090EF1F /* GathurObj.swift */; };
+		0712FB371BF583850090EF1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB361BF583850090EF1F /* ProfileViewController.swift */; };
+		0712FB391BF586E20090EF1F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB381BF586E20090EF1F /* Profile.swift */; };
 		075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78751BED44E500AEB08E /* AppDelegate.swift */; };
-		075D78781BED44E500AEB08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78771BED44E500AEB08E /* ViewController.swift */; };
+		075D78781BED44E500AEB08E /* NewGathuringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78771BED44E500AEB08E /* NewGathuringViewController.swift */; };
 		075D787B1BED44E500AEB08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D78791BED44E500AEB08E /* Main.storyboard */; };
 		075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075D787C1BED44E500AEB08E /* Assets.xcassets */; };
 		075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0712FB301BF5778C0090EF1F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		0712FB321BF577B40090EF1F /* GathuringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathuringViewController.swift; sourceTree = "<group>"; };
+		0712FB341BF579220090EF1F /* GathurObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathurObj.swift; sourceTree = "<group>"; };
+		0712FB361BF583850090EF1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0712FB381BF586E20090EF1F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		075D78721BED44E500AEB08E /* Gathur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gathur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075D78751BED44E500AEB08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		075D78771BED44E500AEB08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		075D78771BED44E500AEB08E /* NewGathuringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGathuringViewController.swift; sourceTree = "<group>"; };
 		075D787A1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		075D787C1BED44E500AEB08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075D787F1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				075D78751BED44E500AEB08E /* AppDelegate.swift */,
-				075D78771BED44E500AEB08E /* ViewController.swift */,
+				075D78771BED44E500AEB08E /* NewGathuringViewController.swift */,
 				075D78791BED44E500AEB08E /* Main.storyboard */,
 				075D787C1BED44E500AEB08E /* Assets.xcassets */,
 				075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */,
 				075D78811BED44E500AEB08E /* Info.plist */,
+				0712FB301BF5778C0090EF1F /* TableViewCell.swift */,
+				0712FB321BF577B40090EF1F /* GathuringViewController.swift */,
+				0712FB341BF579220090EF1F /* GathurObj.swift */,
+				0712FB361BF583850090EF1F /* ProfileViewController.swift */,
+				0712FB381BF586E20090EF1F /* Profile.swift */,
 			);
 			path = Gathur;
 			sourceTree = "<group>";
@@ -256,8 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075D78781BED44E500AEB08E /* ViewController.swift in Sources */,
+				0712FB371BF583850090EF1F /* ProfileViewController.swift in Sources */,
+				0712FB311BF5778C0090EF1F /* TableViewCell.swift in Sources */,
+				075D78781BED44E500AEB08E /* NewGathuringViewController.swift in Sources */,
+				0712FB391BF586E20090EF1F /* Profile.swift in Sources */,
 				075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */,
+				0712FB351BF579220090EF1F /* GathurObj.swift in Sources */,
+				0712FB331BF577B40090EF1F /* GathuringViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +504,7 @@
 				075D789C1BED44E500AEB08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075D789D1BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +513,7 @@
 				075D789F1BED44E500AEB08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075D78A01BED44E500AEB08E /* Build configuration list for PBXNativeTarget "GathurUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +522,7 @@
 				075D78A21BED44E500AEB08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
