@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F551408C1BF8FDE200AFC09B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551408B1BF8FDE200AFC09B /* AppDelegate.swift */; };
+		F551408E1BF8FDE200AFC09B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551408D1BF8FDE200AFC09B /* ViewController.swift */; };
+		F55140911BF8FDE200AFC09B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F551408F1BF8FDE200AFC09B /* Main.storyboard */; };
+		F55140931BF8FDE200AFC09B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55140921BF8FDE200AFC09B /* Assets.xcassets */; };
+		F55140961BF8FDE200AFC09B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55140941BF8FDE200AFC09B /* LaunchScreen.storyboard */; };
+		F55140A11BF8FDE300AFC09B /* GathurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140A01BF8FDE300AFC09B /* GathurTests.swift */; };
+		F55140AC1BF8FDE300AFC09B /* GathurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140AB1BF8FDE300AFC09B /* GathurUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F551409D1BF8FDE300AFC09B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F55140801BF8FDE100AFC09B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F55140871BF8FDE200AFC09B;
+			remoteInfo = Gathur;
+		};
+		F55140A81BF8FDE300AFC09B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F55140801BF8FDE100AFC09B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F55140871BF8FDE200AFC09B;
+			remoteInfo = Gathur;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F55140881BF8FDE200AFC09B /* Gathur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gathur.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F551408B1BF8FDE200AFC09B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F551408D1BF8FDE200AFC09B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F55140901BF8FDE200AFC09B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F55140921BF8FDE200AFC09B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55140951BF8FDE200AFC09B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F55140971BF8FDE200AFC09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F551409C1BF8FDE300AFC09B /* GathurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GathurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55140A01BF8FDE300AFC09B /* GathurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GathurTests.swift; sourceTree = "<group>"; };
+		F55140A21BF8FDE300AFC09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55140A71BF8FDE300AFC09B /* GathurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GathurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55140AB1BF8FDE300AFC09B /* GathurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GathurUITests.swift; sourceTree = "<group>"; };
+		F55140AD1BF8FDE300AFC09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F55140851BF8FDE200AFC09B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55140991BF8FDE300AFC09B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55140A41BF8FDE300AFC09B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F551407F1BF8FDE100AFC09B = {
+			isa = PBXGroup;
+			children = (
+				F551408A1BF8FDE200AFC09B /* Gathur */,
+				F551409F1BF8FDE300AFC09B /* GathurTests */,
+				F55140AA1BF8FDE300AFC09B /* GathurUITests */,
+				F55140891BF8FDE200AFC09B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F55140891BF8FDE200AFC09B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F55140881BF8FDE200AFC09B /* Gathur.app */,
+				F551409C1BF8FDE300AFC09B /* GathurTests.xctest */,
+				F55140A71BF8FDE300AFC09B /* GathurUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F551408A1BF8FDE200AFC09B /* Gathur */ = {
+			isa = PBXGroup;
+			children = (
+				F551408B1BF8FDE200AFC09B /* AppDelegate.swift */,
+				F551408D1BF8FDE200AFC09B /* ViewController.swift */,
+				F551408F1BF8FDE200AFC09B /* Main.storyboard */,
+				F55140921BF8FDE200AFC09B /* Assets.xcassets */,
+				F55140941BF8FDE200AFC09B /* LaunchScreen.storyboard */,
+				F55140971BF8FDE200AFC09B /* Info.plist */,
+			);
+			path = Gathur;
+			sourceTree = "<group>";
+		};
+		F551409F1BF8FDE300AFC09B /* GathurTests */ = {
+			isa = PBXGroup;
+			children = (
+				F55140A01BF8FDE300AFC09B /* GathurTests.swift */,
+				F55140A21BF8FDE300AFC09B /* Info.plist */,
+			);
+			path = GathurTests;
+			sourceTree = "<group>";
+		};
+		F55140AA1BF8FDE300AFC09B /* GathurUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F55140AB1BF8FDE300AFC09B /* GathurUITests.swift */,
+				F55140AD1BF8FDE300AFC09B /* Info.plist */,
+			);
+			path = GathurUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F55140871BF8FDE200AFC09B /* Gathur */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55140B01BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "Gathur" */;
+			buildPhases = (
+				F55140841BF8FDE200AFC09B /* Sources */,
+				F55140851BF8FDE200AFC09B /* Frameworks */,
+				F55140861BF8FDE200AFC09B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gathur;
+			productName = Gathur;
+			productReference = F55140881BF8FDE200AFC09B /* Gathur.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F551409B1BF8FDE300AFC09B /* GathurTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55140B31BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "GathurTests" */;
+			buildPhases = (
+				F55140981BF8FDE300AFC09B /* Sources */,
+				F55140991BF8FDE300AFC09B /* Frameworks */,
+				F551409A1BF8FDE300AFC09B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F551409E1BF8FDE300AFC09B /* PBXTargetDependency */,
+			);
+			name = GathurTests;
+			productName = GathurTests;
+			productReference = F551409C1BF8FDE300AFC09B /* GathurTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F55140A61BF8FDE300AFC09B /* GathurUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55140B61BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "GathurUITests" */;
+			buildPhases = (
+				F55140A31BF8FDE300AFC09B /* Sources */,
+				F55140A41BF8FDE300AFC09B /* Frameworks */,
+				F55140A51BF8FDE300AFC09B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F55140A91BF8FDE300AFC09B /* PBXTargetDependency */,
+			);
+			name = GathurUITests;
+			productName = GathurUITests;
+			productReference = F55140A71BF8FDE300AFC09B /* GathurUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F55140801BF8FDE100AFC09B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Jiqing Xu";
+				TargetAttributes = {
+					F55140871BF8FDE200AFC09B = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					F551409B1BF8FDE300AFC09B = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = F55140871BF8FDE200AFC09B;
+					};
+					F55140A61BF8FDE300AFC09B = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = F55140871BF8FDE200AFC09B;
+					};
+				};
+			};
+			buildConfigurationList = F55140831BF8FDE100AFC09B /* Build configuration list for PBXProject "Gathur" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F551407F1BF8FDE100AFC09B;
+			productRefGroup = F55140891BF8FDE200AFC09B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F55140871BF8FDE200AFC09B /* Gathur */,
+				F551409B1BF8FDE300AFC09B /* GathurTests */,
+				F55140A61BF8FDE300AFC09B /* GathurUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F55140861BF8FDE200AFC09B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55140961BF8FDE200AFC09B /* LaunchScreen.storyboard in Resources */,
+				F55140931BF8FDE200AFC09B /* Assets.xcassets in Resources */,
+				F55140911BF8FDE200AFC09B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F551409A1BF8FDE300AFC09B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55140A51BF8FDE300AFC09B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F55140841BF8FDE200AFC09B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F551408E1BF8FDE200AFC09B /* ViewController.swift in Sources */,
+				F551408C1BF8FDE200AFC09B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55140981BF8FDE300AFC09B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55140A11BF8FDE300AFC09B /* GathurTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55140A31BF8FDE300AFC09B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55140AC1BF8FDE300AFC09B /* GathurUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F551409E1BF8FDE300AFC09B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F55140871BF8FDE200AFC09B /* Gathur */;
+			targetProxy = F551409D1BF8FDE300AFC09B /* PBXContainerItemProxy */;
+		};
+		F55140A91BF8FDE300AFC09B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F55140871BF8FDE200AFC09B /* Gathur */;
+			targetProxy = F55140A81BF8FDE300AFC09B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F551408F1BF8FDE200AFC09B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55140901BF8FDE200AFC09B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F55140941BF8FDE200AFC09B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55140951BF8FDE200AFC09B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F55140AE1BF8FDE300AFC09B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F55140AF1BF8FDE300AFC09B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F55140B11BF8FDE300AFC09B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gathur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.Gathur";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F55140B21BF8FDE300AFC09B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gathur/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.Gathur";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F55140B41BF8FDE300AFC09B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GathurTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.GathurTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gathur.app/Gathur";
+			};
+			name = Debug;
+		};
+		F55140B51BF8FDE300AFC09B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GathurTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.GathurTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gathur.app/Gathur";
+			};
+			name = Release;
+		};
+		F55140B71BF8FDE300AFC09B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GathurUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.GathurUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gathur;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F55140B81BF8FDE300AFC09B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GathurUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com-cs407.GathurUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Gathur;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F55140831BF8FDE100AFC09B /* Build configuration list for PBXProject "Gathur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55140AE1BF8FDE300AFC09B /* Debug */,
+				F55140AF1BF8FDE300AFC09B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F55140B01BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "Gathur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55140B11BF8FDE300AFC09B /* Debug */,
+				F55140B21BF8FDE300AFC09B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F55140B31BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "GathurTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55140B41BF8FDE300AFC09B /* Debug */,
+				F55140B51BF8FDE300AFC09B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F55140B61BF8FDE300AFC09B /* Build configuration list for PBXNativeTarget "GathurUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55140B71BF8FDE300AFC09B /* Debug */,
+				F55140B81BF8FDE300AFC09B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F55140801BF8FDE100AFC09B /* Project object */;
+}
