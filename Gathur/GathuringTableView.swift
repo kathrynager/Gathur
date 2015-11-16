@@ -8,15 +8,15 @@
 
 import UIKit
 
-class GathuringViewController: UITableViewController {
+class GathuringTableView: UITableViewController {
 
     //until database implemented list of events
     var gathurList : [GathurObj]?
     
-    
     @IBAction func newGathuring(sender: AnyObject) {
-        
     }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

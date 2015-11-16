@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewGathuringViewController : UIViewController {
+class NewGathuringView : UIView {
 
     var newGathuring : GathurObj?
     
@@ -18,7 +18,7 @@ class NewGathuringViewController : UIViewController {
     @IBOutlet weak var gathurName: UITextField!
     
     @IBAction func cancel(sender: AnyObject) {
-        let view : GathuringViewController = self.presentingViewController as! GathuringViewController
+       // let view : GathuringViewController = self.presentingViewController as! GathuringViewController
             newGathuring?.title = gathurName.text!
         //Check for location
         if(location.text != nil){
@@ -31,27 +31,11 @@ class NewGathuringViewController : UIViewController {
         
         newGathuring?.description = gathurDescription.text!
         
-            view.gathurList?.append(newGathuring!)
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            
-        })
-        self.dismissViewControllerAnimated(true, completion: nil)
+
 
     }
     
-    @IBAction func post(sender: AnyObject) {
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
