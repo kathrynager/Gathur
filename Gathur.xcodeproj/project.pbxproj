@@ -14,6 +14,8 @@
 		F55140961BF8FDE200AFC09B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55140941BF8FDE200AFC09B /* LaunchScreen.storyboard */; };
 		F55140A11BF8FDE300AFC09B /* GathurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140A01BF8FDE300AFC09B /* GathurTests.swift */; };
 		F55140AC1BF8FDE300AFC09B /* GathurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140AB1BF8FDE300AFC09B /* GathurUITests.swift */; };
+		F55140BC1BF9045C00AFC09B /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140BB1BF9045C00AFC09B /* RegisterPageViewController.swift */; };
+		F55140BE1BF9089A00AFC09B /* LoginUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55140BD1BF9089A00AFC09B /* LoginUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F55140A71BF8FDE300AFC09B /* GathurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GathurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55140AB1BF8FDE300AFC09B /* GathurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GathurUITests.swift; sourceTree = "<group>"; };
 		F55140AD1BF8FDE300AFC09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55140BB1BF9045C00AFC09B /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPageViewController.swift; path = ../RegisterPageViewController.swift; sourceTree = "<group>"; };
+		F55140BD1BF9089A00AFC09B /* LoginUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserViewController.swift; path = ../LoginUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				F551408B1BF8FDE200AFC09B /* AppDelegate.swift */,
+				F55140BB1BF9045C00AFC09B /* RegisterPageViewController.swift */,
+				F55140BD1BF9089A00AFC09B /* LoginUserViewController.swift */,
 				F551408D1BF8FDE200AFC09B /* ViewController.swift */,
 				F551408F1BF8FDE200AFC09B /* Main.storyboard */,
 				F55140921BF8FDE200AFC09B /* Assets.xcassets */,
@@ -258,6 +264,8 @@
 			files = (
 				F551408E1BF8FDE200AFC09B /* ViewController.swift in Sources */,
 				F551408C1BF8FDE200AFC09B /* AppDelegate.swift in Sources */,
+				F55140BC1BF9045C00AFC09B /* RegisterPageViewController.swift in Sources */,
+				F55140BE1BF9089A00AFC09B /* LoginUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
