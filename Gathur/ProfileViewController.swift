@@ -17,14 +17,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var userGathurings: UITableView!
     
-    var user : Profile!
+    var user  = Profile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        
         name.text = user.firstName! + user.lastName!
         userDescription.text = user.description!
         location.text = user.location!
-        //profilePic.image =
+        profilePic.image = UIImage(named:"Cat.jpg")
         
         //load user gathurings
         

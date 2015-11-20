@@ -24,6 +24,17 @@ class GathurTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+//        let tableView = GathuringTableView()
+//
+//        
+//        let profOne = Profile(firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass", profilePic: UIImage(named: "Cat"))
+   
+//        
+//        tableView.gathurList?.append(one)
+//        tableView.gathurList?.append(two)
+//        tableView.gathurList?.append(three)
+//        tableView.gathurList?.append(four)
     }
     
     func testPerformanceExample() {

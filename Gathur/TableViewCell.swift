@@ -10,6 +10,14 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var gathurTitle: UILabel!
+    @IBOutlet weak var username: UILabel!
+    
+    @IBAction func attend(sender: AnyObject) {
+    }
+    @IBAction func like(sender: AnyObject) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

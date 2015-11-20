@@ -13,7 +13,6 @@
 		0712FB371BF583850090EF1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB361BF583850090EF1F /* ProfileViewController.swift */; };
 		0712FB391BF586E20090EF1F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB381BF586E20090EF1F /* Profile.swift */; };
 		075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78751BED44E500AEB08E /* AppDelegate.swift */; };
-		075D787B1BED44E500AEB08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D78791BED44E500AEB08E /* Main.storyboard */; };
 		075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075D787C1BED44E500AEB08E /* Assets.xcassets */; };
 		075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */; };
 		075D788B1BED44E500AEB08E /* GathurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D788A1BED44E500AEB08E /* GathurTests.swift */; };
@@ -21,6 +20,8 @@
 		0779E00E1BF96D4E000CC03E /* NewGathurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779E00D1BF96D4E000CC03E /* NewGathurViewController.swift */; };
 		077B57231BFA87CC00E34DD0 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57221BFA87CC00E34DD0 /* RegisterPageViewController.swift */; };
 		077B57251BFA87D500E34DD0 /* LoginUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57241BFA87D500E34DD0 /* LoginUserViewController.swift */; };
+		077B57311BFD6C8000E34DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077B572F1BFD6C8000E34DD0 /* Main.storyboard */; };
+		077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		0712FB381BF586E20090EF1F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		075D78721BED44E500AEB08E /* Gathur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gathur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075D78751BED44E500AEB08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		075D787A1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		075D787C1BED44E500AEB08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075D787F1BED44E500AEB08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		075D78811BED44E500AEB08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		0779E00D1BF96D4E000CC03E /* NewGathurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGathurViewController.swift; sourceTree = "<group>"; };
 		077B57221BFA87CC00E34DD0 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPageViewController.swift; path = "../../Downloads/Gathur-login/RegisterPageViewController.swift"; sourceTree = "<group>"; };
 		077B57241BFA87D500E34DD0 /* LoginUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserViewController.swift; path = "../../Downloads/Gathur-login/LoginUserViewController.swift"; sourceTree = "<group>"; };
+		077B57301BFD6C8000E34DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathurDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +116,8 @@
 				075D78751BED44E500AEB08E /* AppDelegate.swift */,
 				077B57221BFA87CC00E34DD0 /* RegisterPageViewController.swift */,
 				077B57241BFA87D500E34DD0 /* LoginUserViewController.swift */,
-				075D78791BED44E500AEB08E /* Main.storyboard */,
 				075D787C1BED44E500AEB08E /* Assets.xcassets */,
+				077B572F1BFD6C8000E34DD0 /* Main.storyboard */,
 				075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */,
 				075D78811BED44E500AEB08E /* Info.plist */,
 				0712FB301BF5778C0090EF1F /* TableViewCell.swift */,
@@ -124,6 +126,7 @@
 				0712FB361BF583850090EF1F /* ProfileViewController.swift */,
 				0712FB381BF586E20090EF1F /* Profile.swift */,
 				0779E00D1BF96D4E000CC03E /* NewGathurViewController.swift */,
+				077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */,
 			);
 			path = Gathur;
 			sourceTree = "<group>";
@@ -250,9 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077B57311BFD6C8000E34DD0 /* Main.storyboard in Resources */,
 				075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */,
 				075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */,
-				075D787B1BED44E500AEB08E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +285,7 @@
 				0712FB391BF586E20090EF1F /* Profile.swift in Sources */,
 				0779E00E1BF96D4E000CC03E /* NewGathurViewController.swift in Sources */,
 				077B57251BFA87D500E34DD0 /* LoginUserViewController.swift in Sources */,
+				077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */,
 				077B57231BFA87CC00E34DD0 /* RegisterPageViewController.swift in Sources */,
 				075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */,
 				0712FB351BF579220090EF1F /* GathurObj.swift in Sources */,
@@ -321,20 +325,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		075D78791BED44E500AEB08E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				075D787A1BED44E500AEB08E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				075D787F1BED44E500AEB08E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		077B572F1BFD6C8000E34DD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				077B57301BFD6C8000E34DD0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -427,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Gathur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;
@@ -438,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Gathur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;

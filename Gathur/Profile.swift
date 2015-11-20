@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Profile {
     var firstName : String?
@@ -15,5 +16,19 @@ struct Profile {
     var description : String?
     var location : String?
     var password : String?
-    //var profilePic :
+    var profilePic : UIImage?
+
+    init(){
+        
+    }
+    init(firstName : String, lastName : String, username : String, description : String, location : String, password : String, profilePic : UIImage){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.username = username
+        self.description = description
+        self.location = location
+        self.password = password
+        self.profilePic = profilePic
+    }
 }
+
