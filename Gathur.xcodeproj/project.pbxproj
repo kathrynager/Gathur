@@ -12,6 +12,10 @@
 		0712FB351BF579220090EF1F /* GathurObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB341BF579220090EF1F /* GathurObj.swift */; };
 		0712FB371BF583850090EF1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB361BF583850090EF1F /* ProfileViewController.swift */; };
 		0712FB391BF586E20090EF1F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712FB381BF586E20090EF1F /* Profile.swift */; };
+		072ADE261C18CE31004C2E60 /* UserGathuringsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ADE251C18CE31004C2E60 /* UserGathuringsTableViewCell.swift */; };
+		072ADE281C1B4C22004C2E60 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ADE271C1B4C22004C2E60 /* CommentsTableViewCell.swift */; };
+		072ADE2A1C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ADE291C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift */; };
+		072ADE2C1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ADE2B1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift */; };
 		075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D78751BED44E500AEB08E /* AppDelegate.swift */; };
 		075D787D1BED44E500AEB08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075D787C1BED44E500AEB08E /* Assets.xcassets */; };
 		075D78801BED44E500AEB08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075D787E1BED44E500AEB08E /* LaunchScreen.storyboard */; };
@@ -22,6 +26,9 @@
 		077B57251BFA87D500E34DD0 /* LoginUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57241BFA87D500E34DD0 /* LoginUserViewController.swift */; };
 		077B57311BFD6C8000E34DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077B572F1BFD6C8000E34DD0 /* Main.storyboard */; };
 		077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */; };
+		079D7A9C1C1C7CF30094F3C5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */; };
+		079D7A9D1C1C7CF30094F3C5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +46,77 @@
 			remoteGlobalIDString = 075D78711BED44E500AEB08E;
 			remoteInfo = Gathur;
 		};
+		079D7A8E1C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		079D7A901C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		079D7A921C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		079D7A941C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
+		079D7A961C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		079D7A981C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS Tests";
+		};
+		079D7A9A1C1C7CD60094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		079D7A9E1C1C7CF30094F3C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		079D7AA01C1C7CF30094F3C5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				079D7A9D1C1C7CF30094F3C5 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0712FB301BF5778C0090EF1F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -47,6 +124,10 @@
 		0712FB341BF579220090EF1F /* GathurObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathurObj.swift; sourceTree = "<group>"; };
 		0712FB361BF583850090EF1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0712FB381BF586E20090EF1F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		072ADE251C18CE31004C2E60 /* UserGathuringsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGathuringsTableViewCell.swift; sourceTree = "<group>"; };
+		072ADE271C1B4C22004C2E60 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		072ADE291C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsAttendingTableViewController.swift; sourceTree = "<group>"; };
+		072ADE2B1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		075D78721BED44E500AEB08E /* Gathur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gathur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075D78751BED44E500AEB08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		075D787C1BED44E500AEB08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +144,8 @@
 		077B57241BFA87D500E34DD0 /* LoginUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserViewController.swift; path = "../../Downloads/Gathur-login/LoginUserViewController.swift"; sourceTree = "<group>"; };
 		077B57301BFD6C8000E34DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathurDetailsViewController.swift; sourceTree = "<group>"; };
+		079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../Documents/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGathuringsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079D7A9C1C1C7CF30094F3C5 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +177,7 @@
 		075D78691BED44E500AEB08E = {
 			isa = PBXGroup;
 			children = (
+				079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */,
 				075D78741BED44E500AEB08E /* Gathur */,
 				075D78891BED44E500AEB08E /* GathurTests */,
 				075D78941BED44E500AEB08E /* GathurUITests */,
@@ -127,6 +212,11 @@
 				0712FB381BF586E20090EF1F /* Profile.swift */,
 				0779E00D1BF96D4E000CC03E /* NewGathurViewController.swift */,
 				077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */,
+				072ADE251C18CE31004C2E60 /* UserGathuringsTableViewCell.swift */,
+				072ADE271C1B4C22004C2E60 /* CommentsTableViewCell.swift */,
+				072ADE291C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift */,
+				072ADE2B1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift */,
+				079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */,
 			);
 			path = Gathur;
 			sourceTree = "<group>";
@@ -149,6 +239,20 @@
 			path = GathurUITests;
 			sourceTree = "<group>";
 		};
+		079D7A851C1C7CD60094F3C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */,
+				079D7A911C1C7CD60094F3C5 /* Alamofire iOS Tests.xctest */,
+				079D7A931C1C7CD60094F3C5 /* Alamofire.framework */,
+				079D7A951C1C7CD60094F3C5 /* Alamofire OSX Tests.xctest */,
+				079D7A971C1C7CD60094F3C5 /* Alamofire.framework */,
+				079D7A991C1C7CD60094F3C5 /* Alamofire tvOS Tests.xctest */,
+				079D7A9B1C1C7CD60094F3C5 /* Alamofire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,10 +263,12 @@
 				075D786E1BED44E500AEB08E /* Sources */,
 				075D786F1BED44E500AEB08E /* Frameworks */,
 				075D78701BED44E500AEB08E /* Resources */,
+				079D7AA01C1C7CF30094F3C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				079D7A9F1C1C7CF30094F3C5 /* PBXTargetDependency */,
 			);
 			name = Gathur;
 			productName = Gathur;
@@ -239,6 +345,12 @@
 			mainGroup = 075D78691BED44E500AEB08E;
 			productRefGroup = 075D78731BED44E500AEB08E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 079D7A851C1C7CD60094F3C5 /* Products */;
+					ProjectRef = 079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				075D78711BED44E500AEB08E /* Gathur */,
@@ -247,6 +359,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 079D7A8E1C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A911C1C7CD60094F3C5 /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = 079D7A901C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A931C1C7CD60094F3C5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 079D7A921C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A951C1C7CD60094F3C5 /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = 079D7A941C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A971C1C7CD60094F3C5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 079D7A961C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A991C1C7CD60094F3C5 /* Alamofire tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire tvOS Tests.xctest";
+			remoteRef = 079D7A981C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		079D7A9B1C1C7CD60094F3C5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 079D7A9A1C1C7CD60094F3C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		075D78701BED44E500AEB08E /* Resources */ = {
@@ -285,8 +449,13 @@
 				0712FB391BF586E20090EF1F /* Profile.swift in Sources */,
 				0779E00E1BF96D4E000CC03E /* NewGathurViewController.swift in Sources */,
 				077B57251BFA87D500E34DD0 /* LoginUserViewController.swift in Sources */,
+				072ADE2C1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift in Sources */,
 				077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */,
 				077B57231BFA87CC00E34DD0 /* RegisterPageViewController.swift in Sources */,
+				072ADE281C1B4C22004C2E60 /* CommentsTableViewCell.swift in Sources */,
+				079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */,
+				072ADE261C18CE31004C2E60 /* UserGathuringsTableViewCell.swift in Sources */,
+				072ADE2A1C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift in Sources */,
 				075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */,
 				0712FB351BF579220090EF1F /* GathurObj.swift in Sources */,
 				0712FB331BF577B40090EF1F /* GathuringTableView.swift in Sources */,
@@ -321,6 +490,11 @@
 			isa = PBXTargetDependency;
 			target = 075D78711BED44E500AEB08E /* Gathur */;
 			targetProxy = 075D78921BED44E500AEB08E /* PBXContainerItemProxy */;
+		};
+		079D7A9F1C1C7CF30094F3C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 079D7A9E1C1C7CF30094F3C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -432,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Gathur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;
@@ -444,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Gathur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CS407.Gathur;

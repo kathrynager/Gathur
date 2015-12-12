@@ -1,23 +1,20 @@
 //
-//  TableViewCell.swift
+//  UserGathuringsTableViewCell.swift
 //  Gathur
 //
-//  Created by Kathryn Ager on 11/12/15.
+//  Created by Kathryn Ager on 12/9/15.
 //  Copyright © 2015 Kathryn Ager. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class UserGathuringsTableViewCell: UITableViewCell {
 
-    var gathurObj = GathurObj()
     var currUser = Profile()
+    var gathurObj = GathurObj()
     
     @IBOutlet weak var attendTitle: UIButton!
-    @IBOutlet var profilePic: UIImageView!
-    @IBOutlet weak var gathurTitle: UILabel!
-    @IBOutlet weak var username: UILabel!
-       var profile: Profile?
+    @IBOutlet weak var gathuring: UILabel!
     @IBAction func attend(sender: AnyObject) {
         if(gathurObj.friends.isEmpty){
             gathurObj.friends.append(currUser)
@@ -44,17 +41,13 @@ class TableViewCell: UITableViewCell {
             }
         }
     }
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
-}
+   }

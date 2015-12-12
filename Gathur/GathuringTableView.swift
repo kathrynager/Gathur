@@ -12,15 +12,9 @@ class GathuringTableView: UITableViewController {
     
     //until database implemented list of events
     var gathurList : [GathurObj] = []
-    //
-    //    let test = {
-    //        var profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass")
-    //    var one = GathurObj(title: "FUN", profile: profOne)
-    //
-    //    }
-    // test()
-    
-    
+    var profileList : [Profile] = []
+    var currUser = Profile()
+        
     @IBAction func newGathuring(sender: AnyObject) {
     }
     
@@ -33,24 +27,44 @@ class GathuringTableView: UITableViewController {
         table.dataSource = self
         
         if(gathurList.isEmpty){
-            let profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass", profilePic: UIImage(named: "Cat.jpg")!)
-            let profTwo = Profile(firstName: "Person", lastName: "Two", username: "two", description: "Student" , location: "Madison", password: "mypass", profilePic: UIImage(named: "Cat.jpg")!)
-            let profThree = Profile(firstName: "Harry", lastName: "Potter", username: "HPott", description: "School of Wizardry" , location: "Hogwarts", password: "mypass", profilePic: UIImage(named: "Cat.jpg")!)
-            let profFour = Profile(firstName: "Voldemort", lastName: "Riddle", username: "Tom", description: "" , location: "", password: "mypass",profilePic: UIImage(named: "Cat.jpg")!)
+            let profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass")
+            let profTwo = Profile(firstName: "Person", lastName: "Two", username: "two", description: "Student" , location: "Madison", password: "mypass")
+            let profThree = Profile(firstName: "Harry", lastName: "Potter", username: "HPott", description: "School of Wizardry" , location: "Hogwarts", password: "mypass", profilePic: UIImage(named: "DefaultPic.jpg")!)
+            var profFour = Profile(firstName: "Voldemort", lastName: "Riddle", username: "Tom", description: "" , location: "", password: "mypass",profilePic: UIImage(named: "DefaultPic.jpg")!)
             
             
             let one = GathurObj(title: "FUN", profile: profOne)
             let two = GathurObj(title: "Study Group", profile: profTwo, location: "Madison", description: "So fun")
             let three = GathurObj(title: "Quiditch", profile: profThree, location: "Hogwarts", description: "Watch")
             let four = GathurObj(title: "Death Eaters party", profile: profFour, location: "Voldemorts House", description: "Fun")
+            
+            let fourParty = GathurObj(title: "FUN1", profile: profFour)
+            let fourpartyTwo =  GathurObj(title: "FUN2", profile: profFour)
+            let fourpartyThree = GathurObj(title: "FUN3", profile: profFour)
+            
+            profFour.gathurList.append(fourParty)
+            profFour.gathurList.append(fourpartyThree)
+            profFour.gathurList.append(fourpartyTwo)
+            
             gathurList.append(one)
             gathurList.append(two)
             gathurList.append(three)
             gathurList.append(four)
+            
+            
+            profileList.append(profOne)
+            profileList.append(profTwo)
+            profileList.append(profThree)
+            profileList.append(profFour)
+           // profileList.append(currUser)
+            currUser = profOne
+
         }
         else{
             table.reloadData()
         }
+
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -79,24 +93,34 @@ class GathuringTableView: UITableViewController {
         
     }
     
-    
+    var index = 0
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("gathurCell", forIndexPath: indexPath) as! TableViewCell
+        cell.profilePic.tag = indexPath.row;
+        
+        
+        cell.profilePic.userInteractionEnabled = true
+        let tapped:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "TappedOnImage:")
+        tapped.numberOfTapsRequired = 1
+        cell.profilePic.addGestureRecognizer(tapped)
         
         // Configure the cell...
         cell.gathurTitle.text = gathurList[indexPath.row].title
         cell.profilePic.image = gathurList[indexPath.row].profile?.profilePic
         cell.username.text = gathurList[indexPath.row].profile?.username
+        cell.profile = gathurList[indexPath.row].profile
+        cell.gathurObj = gathurList[indexPath.row]
+        cell.currUser = currUser
+
         
         return cell
     }
-    
-//    var tapGesture = UITapGestureRecognizer(target: s, action: "tapRecognizer")
-//    self.view.addGestureRecognizer(tapGesture)
-//    
-//    func tapRecognizer(){
-//        
-//    }
+    func TappedOnImage(sender:UITapGestureRecognizer){
+        print(sender.view?.tag)
+        index = (sender.view?.tag)!
+        self.performSegueWithIdentifier("profileSegue", sender: self)
+
+    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -135,31 +159,35 @@ class GathuringTableView: UITableViewController {
     
     
     //MARK: - Navigation
-    
     //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //Get the new view controller using segue.destinationViewController.
         //Pass the selected object to the new view controller.
-        if(segue.identifier == "profileView"){
-                if let indexPath = self.table.indexPathForSelectedRow{
-                let selectedEvent = gathurList[indexPath.row]
+        if(segue.identifier == "profileSegue"){
+            let indexPath = index
+            let selectedEvent = gathurList[indexPath]
             let targetController = segue.destinationViewController as! ProfileViewController
-                targetController.user = selectedEvent.profile!
-                targetController.name.text = (selectedEvent.profile?.firstName)! + " " + (selectedEvent.profile?.lastName)!
-                targetController.userDescription.text = selectedEvent.profile?.description
-                targetController.location.text = selectedEvent.profile?.location
-            }
+            targetController.user = selectedEvent.profile!
+            targetController.profList = profileList
+            targetController.currUser = currUser
         }
         else if(segue.identifier == "details"){
             if let indexPath = self.table.indexPathForSelectedRow{
                 let selectedEvent = gathurList[indexPath.row]
                 let targetController = segue.destinationViewController as! GathurDetailsViewController
-                
-                if(selectedEvent.description != nil){
-                targetController.gathurDescriptionS = selectedEvent.description!
-                }
-                targetController.gathurTitleS = selectedEvent.title!
+                targetController.gathurObj = selectedEvent
+                targetController.currUser = currUser
             }
+        }
+        else if(segue.identifier == "signOutIdentifier"){
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+            }
+        }
+        else if(segue.identifier == "newGathuringVC"){
+            let targetController = segue.destinationViewController as! NewGathurViewController
+            targetController.currUser = currUser
+            
         }
     }
 }

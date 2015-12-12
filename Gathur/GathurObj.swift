@@ -10,32 +10,35 @@ import Foundation
 
 struct GathurObj {
     var title : String?
-    var friends : [String]?
+    var friends : [Profile]
     var location : String?
     var description : String?
-    var likes : Int?
     var profile : Profile?
     var date : NSDate?
-    
-//    let dateFormatter = NSDateFormatter().dateFormat.
+    var comments : [String]
     
     init(){
-        
+        comments = []
+        friends = []
     }
     
     init(title : String, profile : Profile){
         self.title = title
         self.profile = profile
-        self.likes = 0
         self.date = NSDate()
+        friends = []
+        comments = []
+
     }
     init(title : String, profile : Profile, location : String, description : String){
         self.title = title
         self.profile = profile
         self.location = location
         self.description = description
-        self.likes = 0
         self.date = NSDate()
+        friends = []
+        comments = []
+
     }
     
     
