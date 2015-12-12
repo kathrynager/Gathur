@@ -55,14 +55,10 @@ class NewGathurViewController: UIViewController {
                 print("JSON: \(JSON)")
                 
                 }
-                
         }
         currUser.gathurList.append(newGathur)
         view.gathurList.append(newGathur)
         view.currUser = currUser
-        
-        
-        
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             view.table.reloadData()

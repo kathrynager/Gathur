@@ -48,7 +48,6 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
                     gathurObj.friends.removeAtIndex(i)
                     alreadyAttending = true
                      attendButtonTitle.setTitle("Attend", forState: .Normal)
-                    
                 }
             }
             if(alreadyAttending == false){

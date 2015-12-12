@@ -402,16 +402,6 @@
                         <animations/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.8980392157" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <tabBar key="tableFooterView" contentMode="scaleToFill" id="xRK-g7-WmN">
-                            <rect key="frame" x="0.0" y="179" width="414" height="49"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <animations/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <items>
-                                <tabBarItem title="Profile" image="UserIcon" id="uOi-Ew-qDM"/>
-                                <tabBarItem title="My Gathurings" id="I5Z-PB-dC8"/>
-                            </items>
-                        </tabBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gathurCell" rowHeight="87" id="LhT-oK-UIg" customClass="TableViewCell" customModule="Gathur" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="87"/>
@@ -734,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uC-WQ-fBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1155" y="972"/>
+            <point key="canvasLocation" x="-1248" y="977"/>
         </scene>
         <!--Login User View Controller-->
         <scene sceneID="hTM-KK-nBH">
@@ -945,9 +935,6 @@
             <point key="canvasLocation" x="-881" y="-703"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="UserIcon" width="32" height="32"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d8b-GT-3Ro"/>
     </inferredMetricsTieBreakers>
