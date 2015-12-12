@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileViewController: UIViewController, UITableViewDataSource {
 
@@ -35,7 +36,16 @@ print(user.firstName)
         profilePic.image = UIImage(named:"DefaultPic.jpg")
         
         print("\(user.gathurList.count)")
-        //load user's gathurings
+        // Get user's gathurings
+        let usertoken = "59f7513b635c46679322e0c1fcfe7963"
+        let headers = ["Authorization ": "Token "+usertoken]
+        
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events", headers: headers).responseJSON
+            
+            { response in debugPrint(response)
+                if let JSON = response.result.value { print("JSON: \(JSON)")
+                }
+        }
     }
     
     override func didReceiveMemoryWarning() {
