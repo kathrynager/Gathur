@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+
 
 class GathuringTableView: UITableViewController {
     
@@ -14,7 +18,18 @@ class GathuringTableView: UITableViewController {
     var gathurList : [GathurObj] = []
     var profileList : [Profile] = []
     var currUser = Profile()
-        
+    
+    var currentEventLoc = [String]()
+    var currentEventEndTime:[String] = []
+    var currentEventPub = NSObject()
+    var currentEventid = [Int]()
+    var currentEventCreatedTime:[String] = []
+    var currentEventTitle:[String] = []
+    var currentEventStartTime:[String] = []
+    var currentEventUserId:[Int] = []
+    var currentEventUpdatedTime:[String] = []
+    var currentEventDes:[String] = []
+    
     @IBAction func newGathuring(sender: AnyObject) {
     }
     
@@ -22,47 +37,114 @@ class GathuringTableView: UITableViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-        
-        if(gathurList.isEmpty){
-            let profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass")
-            let profTwo = Profile(firstName: "Person", lastName: "Two", username: "two", description: "Student" , location: "Madison", password: "mypass")
-            let profThree = Profile(firstName: "Harry", lastName: "Potter", username: "HPott", description: "School of Wizardry" , location: "Hogwarts", password: "mypass", profilePic: UIImage(named: "DefaultPic.jpg")!)
-            var profFour = Profile(firstName: "Voldemort", lastName: "Riddle", username: "Tom", description: "" , location: "", password: "mypass",profilePic: UIImage(named: "DefaultPic.jpg")!)
-            
-            
-            let one = GathurObj(title: "FUN", profile: profOne)
-            let two = GathurObj(title: "Study Group", profile: profTwo, location: "Madison", description: "So fun")
-            let three = GathurObj(title: "Quiditch", profile: profThree, location: "Hogwarts", description: "Watch")
-            let four = GathurObj(title: "Death Eaters party", profile: profFour, location: "Voldemorts House", description: "Fun")
-            
-            let fourParty = GathurObj(title: "FUN1", profile: profFour)
-            let fourpartyTwo =  GathurObj(title: "FUN2", profile: profFour)
-            let fourpartyThree = GathurObj(title: "FUN3", profile: profFour)
-            
-            profFour.gathurList.append(fourParty)
-            profFour.gathurList.append(fourpartyThree)
-            profFour.gathurList.append(fourpartyTwo)
-            
-            gathurList.append(one)
-            gathurList.append(two)
-            gathurList.append(three)
-            gathurList.append(four)
-            
-            
-            profileList.append(profOne)
-            profileList.append(profTwo)
-            profileList.append(profThree)
-            profileList.append(profFour)
-           // profileList.append(currUser)
-            currUser = profOne
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+    
 
+//        
+//        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events/all")
+//            .responseString { response in
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+//                
+//                if let JSONResponse = response.result.value {
+//                    print("JSON: \(JSONResponse)")
+//                    
+////                  var array =  [JSON] as! NSArray
+//                    let json = JSON(JSONResponse) as! NSArray
+//                    
+//                    for i in 0..<json.count{
+//                        json[i].array[0]
+//                        
+//                    }
+//                }
+//        }
+        
+
+        var i = 0;
+        var j = 0;
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events/all")
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    //                    print("JSON: \(JSON)")
+                    //                    print(JSON.count)
+                    self.currentEventid = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventStartTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventEndTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventTitle = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventDes = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventLoc = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventUserId = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
+                    
+                    for(i = 0; i < JSON.count;i++){
+                        let item = JSON[i]
+                        
+                        self.currentEventid[i] = item["id"] as! Int
+                        self.currentEventStartTime[i] = item["start_time"] as! String
+                        self.currentEventEndTime[i] = item["end_time"] as! String
+                        self.currentEventTitle[i] = item["title"] as! String
+                        self.currentEventDes[i] = item["description"] as! String
+                        self.currentEventLoc[i] = item["start_time"] as! String
+                        self.currentEventUserId[i] = item["user_id"] as! Int
+                        self.currentEventCreatedTime[i] = item["created_at"] as! String
+                        self.currentEventUpdatedTime[i] = item["updated_at"] as! String
+                       // self.currentEventPub = item["public"] as! NSObject
+                        
+                        
+                    }
+                }
+                self.table.reloadData()
         }
-        else{
-            table.reloadData()
-        }
+        
+//        if(gathurList.isEmpty){
+//            let profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass")
+//            let profTwo = Profile(firstName: "Person", lastName: "Two", username: "two", description: "Student" , location: "Madison", password: "mypass")
+//            let profThree = Profile(firstName: "Harry", lastName: "Potter", username: "HPott", description: "School of Wizardry" , location: "Hogwarts", password: "mypass", profilePic: UIImage(named: "DefaultPic.jpg")!)
+//            var profFour = Profile(firstName: "Voldemort", lastName: "Riddle", username: "Tom", description: "" , location: "", password: "mypass",profilePic: UIImage(named: "DefaultPic.jpg")!)
+//            
+//            
+//            let one = GathurObj(title: "FUN", profile: profOne)
+//            let two = GathurObj(title: "Study Group", profile: profTwo, location: "Madison", description: "So fun")
+//            let three = GathurObj(title: "Quiditch", profile: profThree, location: "Hogwarts", description: "Watch")
+//            let four = GathurObj(title: "Death Eaters party", profile: profFour, location: "Voldemorts House", description: "Fun")
+//            
+//            let fourParty = GathurObj(title: "FUN1", profile: profFour)
+//            let fourpartyTwo =  GathurObj(title: "FUN2", profile: profFour)
+//            let fourpartyThree = GathurObj(title: "FUN3", profile: profFour)
+//            
+//            profFour.gathurList.append(fourParty)
+//            profFour.gathurList.append(fourpartyThree)
+//            profFour.gathurList.append(fourpartyTwo)
+//            
+//            gathurList.append(one)
+//            gathurList.append(two)
+//            gathurList.append(three)
+//            gathurList.append(four)
+//            
+//            
+//            profileList.append(profOne)
+//            profileList.append(profTwo)
+//            profileList.append(profThree)
+//            profileList.append(profFour)
+//           // profileList.append(currUser)
+//            currUser = profOne
+//
+//        }
+//        else{
+//            table.reloadData()
+//        }
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -70,7 +152,8 @@ class GathuringTableView: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        table.reloadData()
+
         
     }
     
@@ -89,7 +172,7 @@ class GathuringTableView: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return gathurList.count
+        return currentEventTitle.count
         
     }
     
@@ -105,16 +188,67 @@ class GathuringTableView: UITableViewController {
         cell.profilePic.addGestureRecognizer(tapped)
         
         // Configure the cell...
-        cell.gathurTitle.text = gathurList[indexPath.row].title
-        cell.profilePic.image = gathurList[indexPath.row].profile?.profilePic
-        cell.username.text = gathurList[indexPath.row].profile?.username
-        cell.profile = gathurList[indexPath.row].profile
-        cell.gathurObj = gathurList[indexPath.row]
+        cell.gathurTitle.text = currentEventTitle[indexPath.row]
+        cell.profilePic.image = UIImage(named: "DefaulPic")
+        cell.username.text = "me"
+      //  cell.profile = gathurList[indexPath.row].profile
+       // cell.gathurObj = gathurList[indexPath.row]
         cell.currUser = currUser
 
         
         return cell
     }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+        var i = 0;
+        var j = 0;
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events/all")
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    //                    print("JSON: \(JSON)")
+                    //                    print(JSON.count)
+                    self.currentEventid = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventStartTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventEndTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventTitle = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventDes = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventLoc = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventUserId = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
+                    
+                    for(i = 0; i < JSON.count;i++){
+                        let item = JSON[i]
+                        
+                        self.currentEventid[i] = item["id"] as! Int
+                        self.currentEventStartTime[i] = item["start_time"] as! String
+                        self.currentEventEndTime[i] = item["end_time"] as! String
+                        self.currentEventTitle[i] = item["title"] as! String
+                        self.currentEventDes[i] = item["description"] as! String
+                        self.currentEventLoc[i] = item["start_time"] as! String
+                        self.currentEventUserId[i] = item["user_id"] as! Int
+                        self.currentEventCreatedTime[i] = item["created_at"] as! String
+                        self.currentEventUpdatedTime[i] = item["updated_at"] as! String
+                        // self.currentEventPub = item["public"] as! NSObject
+                        
+                        
+                    }
+                }
+        }
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     func TappedOnImage(sender:UITapGestureRecognizer){
         print(sender.view?.tag)
         index = (sender.view?.tag)!
@@ -169,18 +303,27 @@ class GathuringTableView: UITableViewController {
             let targetController = segue.destinationViewController as! ProfileViewController
             targetController.user = selectedEvent.profile!
             targetController.profList = profileList
-            targetController.currUser = currUser
+            //targetController.currUser = currUser
         }
         else if(segue.identifier == "details"){
             if let indexPath = self.table.indexPathForSelectedRow{
-                let selectedEvent = gathurList[indexPath.row]
                 let targetController = segue.destinationViewController as! GathurDetailsViewController
-                targetController.gathurObj = selectedEvent
-                targetController.currUser = currUser
+                targetController.currentEventTitle = currentEventTitle[indexPath.row]
+                targetController.currentEventLoc = currentEventLoc[indexPath.row]
+                targetController.currentEventEndTime = currentEventEndTime[indexPath.row]
+//                let selectedPub = currentEventPub[indexPath.row]
+                targetController.currentEventid = currentEventid[indexPath.row]
+                targetController.currentEventCreatedTime = currentEventCreatedTime[indexPath.row]
+               targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
+                targetController.currentEventUserId = currentEventUserId[indexPath.row]
+                targetController.currentEventUpdatedTime = currentEventUpdatedTime[indexPath.row]
+                targetController.currentEventDes = currentEventDes[indexPath.row]
+              //                targetController.gathurObj = selectedEvent
             }
         }
         else if(segue.identifier == "signOutIdentifier"){
             if let navController = self.navigationController {
+                navigationController?.popViewControllerAnimated(true)
                 navController.popViewControllerAnimated(true)
             }
         }

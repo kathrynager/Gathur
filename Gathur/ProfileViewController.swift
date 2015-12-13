@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDataSource {
 
@@ -19,14 +20,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var userGathurings: UITableView!
     
     var user  = Profile()
+    var userAuth = ""
     var profList : [Profile] = []
     var currUser = Profile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let usernameStored = NSUserDefaults.standardUserDefaults().stringForKey("username")
-        let passwordStored = NSUserDefaults.standardUserDefaults().stringForKey("password")
-print(user.firstName)
 
         // Do any additional setup after loading the view.
     
@@ -35,15 +34,19 @@ print(user.firstName)
         location.text = user.location!
         profilePic.image = UIImage(named:"DefaultPic.jpg")
         
-        print("\(user.gathurList.count)")
         // Get user's gathurings
-        let usertoken = "59f7513b635c46679322e0c1fcfe7963"
-        let headers = ["Authorization ": "Token "+usertoken]
+       let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
+        let headers = ["Authorization ": "Token " + authToken]
         
         Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events", headers: headers).responseJSON
             
             { response in debugPrint(response)
-                if let JSON = response.result.value { print("JSON: \(JSON)")
+                if  response.result.isSuccess {
+                    let json = response.result.value
+                    print("JSON: \(json)")
+//                    for (_,_):(String, JSON) in json {
+//                        //Do something you want
+//                    }
                 }
         }
     }
@@ -71,9 +74,7 @@ print(user.firstName)
             if let indexPath = self.userGathurings.indexPathForSelectedRow{
                 let selectedEvent = user.gathurList[indexPath.row]
                 let targetController = segue.destinationViewController as! GathurDetailsViewController
-                targetController.gathurObj = selectedEvent
-                targetController.currUser = currUser
-        }
+                       }
     }
     }
 }

@@ -10,5 +10,10 @@ import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var profPic: UIImageView!
+
+    @IBOutlet weak var user: UILabel!
     @IBOutlet weak var comment: UILabel!
+   
 }

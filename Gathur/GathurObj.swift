@@ -14,7 +14,9 @@ struct GathurObj {
     var location : String?
     var description : String?
     var profile : Profile?
-    var date : NSDate?
+    var userID : Int?
+    var startDate : NSDate?
+    var endDate : NSDate?
     var comments : [String]
     
     init(){
@@ -25,7 +27,8 @@ struct GathurObj {
     init(title : String, profile : Profile){
         self.title = title
         self.profile = profile
-        self.date = NSDate()
+        self.startDate = NSDate()
+        self.endDate = NSDate()
         friends = []
         comments = []
 
@@ -35,7 +38,8 @@ struct GathurObj {
         self.profile = profile
         self.location = location
         self.description = description
-        self.date = NSDate()
+        self.startDate = NSDate()
+        self.endDate = NSDate()
         friends = []
         comments = []
 

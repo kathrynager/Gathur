@@ -13,44 +13,63 @@ class NewGathurViewController: UIViewController {
     
     var newGathur = GathurObj()
     var currUser = Profile()
-
+    
     @IBOutlet weak var gathurTitle: UITextField!
     @IBOutlet weak var gathurDescription: UITextField!
     @IBOutlet weak var location: UITextField!
     
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    override func viewDidLoad() {
+        //set end date picker to an hour later
+        var todayDate = NSDate().dateByAddingTimeInterval(3600)
+        endDatePicker.setDate(todayDate, animated: true)
+    }
+    
     @IBAction func post(segue:UIStoryboardSegue) {
-
-        navigationController?.popViewControllerAnimated(true)
-        let view : GathuringTableView = self.navigationController?.topViewController as! GathuringTableView
         
-        newGathur.title = gathurTitle.text!
-        newGathur.location = location.text!
-//        newGathur.friends.append(currUser)
-        
-        newGathur.description = gathurDescription.text!
+       
+      
         newGathur.profile = currUser
-        print(currUser.firstName)
+
+        if(gathurTitle.text!.isEmpty || gathurDescription.text!.isEmpty || location.text!.isEmpty){
+            let myAlert = UIAlertController(title: "Oops!", message:"All fields required", preferredStyle: UIAlertControllerStyle.Alert)
+            let incorrectInfo = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){ action in
+                //self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            self.presentViewController(myAlert, animated:true, completion:nil)
+            myAlert.addAction(incorrectInfo)
         
-//        let useremail = NSUserDefaults.standardUserDefaults().stringForKey("username")! + "@wisc.edu"
-//        let userps = NSUserDefaults.standardUserDefaults().stringForKey("password")!
+        }
+        else{
+            
+            newGathur.title = gathurTitle.text!
+            newGathur.location = location.text!
+            newGathur.description = gathurDescription.text!
+        let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
         
-       let dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let dateFormatSeconds = NSDateFormatter()
-        dateFormatSeconds.dateFormat = "HH:mm:ss.SS"
+        dateFormatSeconds.dateFormat = "HH:mm:ss"
         
         let eventtitle = gathurTitle.text!
         let eventloc = location.text!
-        let eventstarttime = dateFormatter.stringFromDate(datePicker.date)  + " " + dateFormatSeconds.stringFromDate(datePicker.date)
-        
-        print(eventstarttime)
-        let eventendtime = "2015-12-20 03:09:58.974"
+        let eventstarttime = dateFormatter.stringFromDate(datePicker.date) + " " + dateFormatSeconds.stringFromDate(datePicker.date) + ".000000"
+        //dateFormatter.stringFromDate(datePicker.date)  + " " + dateFormatSeconds.stringFromDate(datePicker.date)
+        var endDateTime = endDatePicker.date
+        if(datePicker.date.earlierDate(endDatePicker.date) == datePicker.date) {
+            //end date an hour after start
+            var laterDate = datePicker.date.dateByAddingTimeInterval(3600)
+            endDatePicker.setDate(laterDate, animated: true)
+            endDateTime = endDatePicker.date
+        }
+
+        let eventendtime = dateFormatter.stringFromDate(endDateTime) + " " + dateFormatSeconds.stringFromDate(endDateTime) + ".000000"
         let eventdes = gathurDescription.text!
         
-        // Current User
-        let usertoken = "59f7513b635c46679322e0c1fcfe7963"
-        let headers = ["Authorization ": "Token " + usertoken]
+        let headers = ["Authorization ": "Token " + authToken]
         
         Alamofire.request(.POST, "https://gathur.herokuapp.com/api/events",
             
@@ -60,17 +79,18 @@ class NewGathurViewController: UIViewController {
             
             { response in debugPrint(response)
                 if let JSON = response.result.value {
-                
-                print("JSON: \(JSON)")
+                    
+                    print("JSON: \(JSON)")
+                       self.navigationController!.popViewControllerAnimated(true)
+                     let view : GathuringTableView = self.navigationController?.topViewController as! GathuringTableView
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        view.table.reloadData()
+                    })
+                 
                 }
+     
+            }
         }
-        currUser.gathurList.append(newGathur)
-        view.gathurList.append(newGathur)
-        view.currUser = currUser
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            view.table.reloadData()
-        })
-        self.navigationController!.popViewControllerAnimated(true)
     }
+    
 }
