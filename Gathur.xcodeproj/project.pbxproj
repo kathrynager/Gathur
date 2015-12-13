@@ -31,6 +31,7 @@
 		079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */; };
 		079D7AD41C1CEDD70094F3C5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7AC71C1CEDCE0094F3C5 /* SwiftyJSON.framework */; };
 		079D7AD51C1CEDD70094F3C5 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7AC71C1CEDCE0094F3C5 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07AAB5871C1E07A3003A7888 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +207,7 @@
 		079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../Documents/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGathuringsTableViewController.swift; sourceTree = "<group>"; };
 		079D7AB61C1CEDCE0094F3C5 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../Documents/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				072ADE291C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift */,
 				072ADE2B1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift */,
 				079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */,
+				07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */,
 			);
 			path = Gathur;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				077B57251BFA87D500E34DD0 /* LoginUserViewController.swift in Sources */,
 				072ADE2C1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift in Sources */,
 				077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */,
+				07AAB5871C1E07A3003A7888 /* UserProfileVC.swift in Sources */,
 				077B57231BFA87CC00E34DD0 /* RegisterPageViewController.swift in Sources */,
 				072ADE281C1B4C22004C2E60 /* CommentsTableViewCell.swift in Sources */,
 				079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */,

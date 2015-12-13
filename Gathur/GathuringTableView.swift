@@ -29,6 +29,7 @@ class GathuringTableView: UITableViewController {
     var currentEventUserId:[String] = []
     var currentEventUpdatedTime:[String] = []
     var currentEventDes:[String] = []
+    var currentEventRealUserId:[Int] = []
     
     @IBAction func newGathuring(sender: AnyObject) {
     }
@@ -42,29 +43,6 @@ class GathuringTableView: UITableViewController {
         table.delegate = self
         table.dataSource = self
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
-    
-
-//        
-//        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events/all")
-//            .responseString { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                
-//                if let JSONResponse = response.result.value {
-//                    print("JSON: \(JSONResponse)")
-//                    
-////                  var array =  [JSON] as! NSArray
-//                    let json = JSON(JSONResponse) as! NSArray
-//                    
-//                    for i in 0..<json.count{
-//                        json[i].array[0]
-//                        
-//                    }
-//                }
-//        }
-        
 
         var i = 0;
         var j = 0;
@@ -76,8 +54,7 @@ class GathuringTableView: UITableViewController {
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
-                    //                    print("JSON: \(JSON)")
-                    //                    print(JSON.count)
+
                     self.currentEventid = [Int](count: JSON.count, repeatedValue: 0)
                     self.currentEventStartTime = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventEndTime = [String](count: JSON.count, repeatedValue: "")
@@ -87,6 +64,7 @@ class GathuringTableView: UITableViewController {
                     self.currentEventUserId = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventRealUserId = [Int](count: JSON.count, repeatedValue: 0)
                     
                     for(i = 0; i < JSON.count;i++){
                         let item = JSON[i]
@@ -100,9 +78,7 @@ class GathuringTableView: UITableViewController {
                         self.currentEventUserId[i] = item["creator_name"] as! String
                         self.currentEventCreatedTime[i] = item["created_at"] as! String
                         self.currentEventUpdatedTime[i] = item["updated_at"] as! String
-                       // self.currentEventPub = item["public"] as! NSObject
-                        
-                        
+                        self.currentEventRealUserId[i] = item["user_id"] as! Int
                     }
                 }
                 self.table.reloadData()
@@ -153,8 +129,6 @@ class GathuringTableView: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         table.reloadData()
-
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -189,8 +163,8 @@ class GathuringTableView: UITableViewController {
         
         // Configure the cell...
         cell.gathurTitle.text = currentEventTitle[indexPath.row]
-        cell.profilePic.image = UIImage(named: "DefaulPic")
-        cell.username.text = "me"
+        cell.profilePic.image = UIImage(named: "DefaultPic")
+        cell.username.text = currentEventUserId[indexPath.row]
       //  cell.profile = gathurList[indexPath.row].profile
        // cell.gathurObj = gathurList[indexPath.row]
         cell.currUser = currUser
@@ -205,7 +179,6 @@ class GathuringTableView: UITableViewController {
         
         // Simply adding an object to the data source for this example
         var i = 0;
-        var j = 0;
         Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events/all")
             .responseJSON { response in
                 print(response.request)  // original URL request
@@ -225,6 +198,7 @@ class GathuringTableView: UITableViewController {
                     self.currentEventUserId = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
+                    self.currentEventRealUserId = [Int](count: JSON.count, repeatedValue: 0)
                     
                     for(i = 0; i < JSON.count;i++){
                         let item = JSON[i]
@@ -238,9 +212,9 @@ class GathuringTableView: UITableViewController {
                         self.currentEventUserId[i] = item["creator_name"] as! String
                         self.currentEventCreatedTime[i] = item["created_at"] as! String
                         self.currentEventUpdatedTime[i] = item["updated_at"] as! String
+                        self.currentEventRealUserId[i] = item["user_id"] as! Int
+
                         // self.currentEventPub = item["public"] as! NSObject
-                        
-                        
                     }
                 }
         }
@@ -252,7 +226,27 @@ class GathuringTableView: UITableViewController {
     func TappedOnImage(sender:UITapGestureRecognizer){
         print(sender.view?.tag)
         index = (sender.view?.tag)!
-        self.performSegueWithIdentifier("profileSegue", sender: self)
+        let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
+        let headers = ["Authorization ": "Token " + authToken]
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/users/me", headers: headers)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                }
+        }
+       // var currUser =
+        if(self.currentEventUserId[self.index] == "me" ){
+            self.performSegueWithIdentifier("userProfileIdentifier", sender: self)
+            }
+        else{
+            self.performSegueWithIdentifier("profileSegue", sender: self)
+ 
+        }
 
     }
     
@@ -305,6 +299,7 @@ class GathuringTableView: UITableViewController {
             //targetController.profList = profileList
             //targetController.currUser = currUser
             targetController.username = currentEventUserId[indexPath]
+            targetController.userID = currentEventRealUserId[indexPath]
         }
         else if(segue.identifier == "details"){
             if let indexPath = self.table.indexPathForSelectedRow{
@@ -319,7 +314,7 @@ class GathuringTableView: UITableViewController {
                 targetController.currentEventUserId = currentEventUserId[indexPath.row]
                 targetController.currentEventUpdatedTime = currentEventUpdatedTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
-              //                targetController.gathurObj = selectedEvent
+              //  targetController.currentEventRealUserId = currentEventRealUserId[indexPath.row]
             }
         }
         else if(segue.identifier == "signOutIdentifier"){
