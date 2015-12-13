@@ -26,7 +26,7 @@ class GathuringTableView: UITableViewController {
     var currentEventCreatedTime:[String] = []
     var currentEventTitle:[String] = []
     var currentEventStartTime:[String] = []
-    var currentEventUserId:[Int] = []
+    var currentEventUserId:[String] = []
     var currentEventUpdatedTime:[String] = []
     var currentEventDes:[String] = []
     
@@ -84,7 +84,7 @@ class GathuringTableView: UITableViewController {
                     self.currentEventTitle = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventDes = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventLoc = [String](count: JSON.count, repeatedValue: "")
-                    self.currentEventUserId = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventUserId = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
                     
@@ -97,7 +97,7 @@ class GathuringTableView: UITableViewController {
                         self.currentEventTitle[i] = item["title"] as! String
                         self.currentEventDes[i] = item["description"] as! String
                         self.currentEventLoc[i] = item["start_time"] as! String
-                        self.currentEventUserId[i] = item["user_id"] as! Int
+                        self.currentEventUserId[i] = item["creator_name"] as! String
                         self.currentEventCreatedTime[i] = item["created_at"] as! String
                         self.currentEventUpdatedTime[i] = item["updated_at"] as! String
                        // self.currentEventPub = item["public"] as! NSObject
@@ -222,7 +222,7 @@ class GathuringTableView: UITableViewController {
                     self.currentEventTitle = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventDes = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventLoc = [String](count: JSON.count, repeatedValue: "")
-                    self.currentEventUserId = [Int](count: JSON.count, repeatedValue: 0)
+                    self.currentEventUserId = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
                     
@@ -235,7 +235,7 @@ class GathuringTableView: UITableViewController {
                         self.currentEventTitle[i] = item["title"] as! String
                         self.currentEventDes[i] = item["description"] as! String
                         self.currentEventLoc[i] = item["start_time"] as! String
-                        self.currentEventUserId[i] = item["user_id"] as! Int
+                        self.currentEventUserId[i] = item["creator_name"] as! String
                         self.currentEventCreatedTime[i] = item["created_at"] as! String
                         self.currentEventUpdatedTime[i] = item["updated_at"] as! String
                         // self.currentEventPub = item["public"] as! NSObject
@@ -299,11 +299,12 @@ class GathuringTableView: UITableViewController {
         //Pass the selected object to the new view controller.
         if(segue.identifier == "profileSegue"){
             let indexPath = index
-            let selectedEvent = gathurList[indexPath]
+           // let selectedEvent = currentEventTitle[indexPath]
             let targetController = segue.destinationViewController as! ProfileViewController
-            targetController.user = selectedEvent.profile!
-            targetController.profList = profileList
+            //targetController.user = selectedEvent.profile!
+            //targetController.profList = profileList
             //targetController.currUser = currUser
+            targetController.username = currentEventUserId[indexPath]
         }
         else if(segue.identifier == "details"){
             if let indexPath = self.table.indexPathForSelectedRow{
@@ -314,7 +315,7 @@ class GathuringTableView: UITableViewController {
 //                let selectedPub = currentEventPub[indexPath.row]
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventCreatedTime = currentEventCreatedTime[indexPath.row]
-               targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
+                targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventUserId = currentEventUserId[indexPath.row]
                 targetController.currentEventUpdatedTime = currentEventUpdatedTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]

@@ -23,16 +23,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     var userAuth = ""
     var profList : [Profile] = []
     var currUser = Profile()
+    var username = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     
-        name.text = user.firstName! + " " + user.lastName!
-        userDescription.text = user.description!
-        location.text = user.location!
+        name.text = username
+        //userDescription.text = user.description!
+      //  location.text = user.location!
         profilePic.image = UIImage(named:"DefaultPic.jpg")
+        
         
         // Get user's gathurings
        let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!

@@ -18,7 +18,7 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var currentEventCreatedTime = ""
     var currentEventTitle = ""
     var currentEventStartTime = ""
-    var currentEventUserId = 0
+    var currentEventUserId = ""
     var currentEventUpdatedTime = ""
     var currentEventDes = ""
     
@@ -27,11 +27,7 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func back(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
         let view : GathuringTableView = self.navigationController?.topViewController as! GathuringTableView
-//        for i in 0..<view.gathurList.count{
-//            if view.gathurList[i].title == gathurObj.title{
-//                view.gathurList[i] = gathurObj
-//            }
-//        }
+
     }
     
     @IBOutlet weak var attendees: UIButton!
@@ -42,26 +38,28 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         let eventid = currentEventid
         let usertoken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
         let headers = ["Authorization ": "Token " + usertoken]
-        
-        Alamofire.request(.POST, "https://gathur.herokuapp.com/api/messages ",
-            parameters:["event_id": eventid, "text" : message!],headers: headers)
-            .responseJSON
-            { response in
-                debugPrint(response)
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+    
+            Alamofire.request(.POST, "https://gathur.herokuapp.com/api/messages",
+                parameters:["event_id": eventid,"text": message!],headers: headers)
+                .responseJSON
+                { response in
+                    print(response.request)  // original URL request
+                    print(response.response) // URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
                     
-                    // message = JSON["description"] as! String
-                }
-        }
-        }
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        
+                        // message = JSON["description"] as! String
+                    }
+            }
 //        if(comment.text != nil){
 //            gathurObj.comments.append(comment.text!)
-//            
-//            commentsTable.reloadData()
-//            comment.text?.removeAll()
-//        }
+//
+            commentsTable.reloadData()
+            comment.text?.removeAll()
+        }
         
     }
     // Add user to attending list and change attend button between unattend & attend
@@ -115,8 +113,7 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         startDatelabel.text = currentEventStartTime
         endDateLabel.text = currentEventEndTime
         profilePic.image = UIImage(named: "DefaultPic")
-   //     nameGathurProfile.text = (gathurObj.profile?.firstName)! + " " + (gathurObj.profile?.lastName)!
-       
+        nameGathurProfile.text = currentEventUserId
         // Adjust title for Attendee(s)
 //        if(gathurObj.friends.count == 1){
 //            attendees.setTitle("\(gathurObj.friends.count) Attendee", forState: .Normal)
@@ -145,11 +142,12 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
 
         let headers = ["Authorization ": "Token "+usertoken]
         
-        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/messages ",
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/messages",
             parameters:["event_id": eventid],headers: headers)
             .responseJSON
             { response in
                 debugPrint(response)
+                
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                     
