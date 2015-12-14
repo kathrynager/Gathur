@@ -529,7 +529,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.8980392157" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.69803921570000005" green="0.1176470588" blue="0.01176470588" alpha="0.4479782517" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gathurCell" rowHeight="87" id="LhT-oK-UIg" customClass="TableViewCell" customModule="Gathur" customModuleProvider="target">
@@ -578,13 +578,13 @@
                                                 <constraint firstAttribute="width" constant="256" id="iv3-P3-Qqu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.1529411765" green="0.019607843140000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
-                                    <color key="backgroundColor" red="0.94117647059999998" green="0.8980392157" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="tintColor" red="0.81255454360000001" green="0.028286261699999999" blue="0.017015288369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.69803921570000005" green="0.1176470588" blue="0.01176470588" alpha="0.4479782517" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" red="0.69803921570000005" green="0.1176470588" blue="0.01176470588" alpha="0.4479782517" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="B3s-1W-Q19" secondAttribute="leading" id="2Zw-im-16r"/>
                                         <constraint firstItem="L5k-Ad-jOy" firstAttribute="leading" secondItem="B3s-1W-Q19" secondAttribute="trailing" constant="7" id="4SS-XU-zAe"/>
@@ -607,7 +607,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <color key="backgroundColor" red="0.68235294120000001" green="0.69411764710000001" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69803921570000005" green="0.1176470588" blue="0.01176470588" alpha="0.4479782516891892" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="gathurTitle" destination="L5k-Ad-jOy" id="0hq-dE-IvQ"/>
@@ -684,7 +684,7 @@
                                     <constraint firstAttribute="width" constant="227" id="p7K-h2-SaJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.94117647059999998" green="0.8980392157" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.4941176471" green="0.039215686270000001" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -692,18 +692,78 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sB-1p-f5t">
-                                <rect key="frame" x="145" y="114" width="227" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INI-hv-Pbf">
+                                <rect key="frame" x="0.0" y="456" width="414" height="231"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.94117647059999998" green="0.8980392157" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="fKd-x3-fgH"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gathurPostCell" id="Igy-gs-82F" customClass="UserGathurCell" customModule="Gathur" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igy-gs-82F" id="e1Z-Pc-2cb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-4O-E2O">
+                                                    <rect key="frame" x="18" y="4" width="35" height="35"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="VdP-2U-hE5"/>
+                                                        <constraint firstAttribute="width" secondItem="OoH-4O-E2O" secondAttribute="height" multiplier="1:1" id="ebW-aB-Ehf"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="VdP-2U-hE5"/>
+                                                            <exclude reference="ebW-aB-Ehf"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDo-gY-FiZ">
+                                                    <rect key="frame" x="63" y="11" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OoH-4O-E2O" secondAttribute="trailing" constant="539" id="09f-gA-HPX"/>
+                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="centerY" secondItem="e1Z-Pc-2cb" secondAttribute="centerY" id="Fit-y7-6Jg"/>
+                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="leading" secondItem="OoH-4O-E2O" secondAttribute="trailing" constant="10" id="Hqe-ap-PyK"/>
+                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="centerY" secondItem="e1Z-Pc-2cb" secondAttribute="centerY" id="NEb-RZ-o9u"/>
+                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="top" secondItem="OoH-4O-E2O" secondAttribute="top" id="NQZ-Lu-cF8"/>
+                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="top" secondItem="e1Z-Pc-2cb" secondAttribute="topMargin" constant="-4" id="fKA-WJ-tHw"/>
+                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="leading" secondItem="e1Z-Pc-2cb" secondAttribute="leadingMargin" constant="10" id="fyH-ns-2KQ"/>
+                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="width" secondItem="OoH-4O-E2O" secondAttribute="height" multiplier="1:1" id="jvV-fQ-tBB"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="09f-gA-HPX"/>
+                                                    <exclude reference="NQZ-Lu-cF8"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="profPic" destination="OoH-4O-E2O" id="QSI-Oa-EcQ"/>
+                                            <outlet property="titleLabel" destination="YDo-gY-FiZ" id="bEi-dH-hMh"/>
+                                            <segue destination="XNf-tH-fQ7" kind="show" identifier="myPostDetails" id="Sbf-gX-mCE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JsU-du-U5x" id="Qua-kX-Pg4"/>
+                                </connections>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP'd Gathurings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-7D-fVa">
                                 <rect key="frame" x="134" y="195" width="146" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.4941176471" green="0.039215686270000001" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bkM-ca-oqa">
@@ -771,88 +831,21 @@
                                 <rect key="frame" x="157" y="427" width="100" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.4941176471" green="0.039215686270000001" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INI-hv-Pbf">
-                                <rect key="frame" x="0.0" y="456" width="414" height="231"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gathurPostCell" id="Igy-gs-82F" customClass="UserGathurCell" customModule="Gathur" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="Igy-gs-82F" id="e1Z-Pc-2cb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-4O-E2O">
-                                                    <rect key="frame" x="18" y="4" width="35" height="35"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="VdP-2U-hE5"/>
-                                                        <constraint firstAttribute="width" secondItem="OoH-4O-E2O" secondAttribute="height" multiplier="1:1" id="ebW-aB-Ehf"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="VdP-2U-hE5"/>
-                                                            <exclude reference="ebW-aB-Ehf"/>
-                                                        </mask>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDo-gY-FiZ">
-                                                    <rect key="frame" x="63" y="11" width="42" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="OoH-4O-E2O" secondAttribute="trailing" constant="539" id="09f-gA-HPX"/>
-                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="centerY" secondItem="e1Z-Pc-2cb" secondAttribute="centerY" id="Fit-y7-6Jg"/>
-                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="leading" secondItem="OoH-4O-E2O" secondAttribute="trailing" constant="10" id="Hqe-ap-PyK"/>
-                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="centerY" secondItem="e1Z-Pc-2cb" secondAttribute="centerY" id="NEb-RZ-o9u"/>
-                                                <constraint firstItem="YDo-gY-FiZ" firstAttribute="top" secondItem="OoH-4O-E2O" secondAttribute="top" id="NQZ-Lu-cF8"/>
-                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="top" secondItem="e1Z-Pc-2cb" secondAttribute="topMargin" constant="-4" id="fKA-WJ-tHw"/>
-                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="leading" secondItem="e1Z-Pc-2cb" secondAttribute="leadingMargin" constant="10" id="fyH-ns-2KQ"/>
-                                                <constraint firstItem="OoH-4O-E2O" firstAttribute="width" secondItem="OoH-4O-E2O" secondAttribute="height" multiplier="1:1" id="jvV-fQ-tBB"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="NQZ-Lu-cF8"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="profPic" destination="OoH-4O-E2O" id="QSI-Oa-EcQ"/>
-                                            <outlet property="titleLabel" destination="YDo-gY-FiZ" id="bEi-dH-hMh"/>
-                                            <segue destination="XNf-tH-fQ7" kind="show" identifier="myPostDetails" id="Sbf-gX-mCE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="JsU-du-U5x" id="Qua-kX-Pg4"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WfK-i0-3oV" firstAttribute="top" secondItem="INI-hv-Pbf" secondAttribute="bottom" constant="8" symbolic="YES" id="66P-DJ-dcZ"/>
                             <constraint firstItem="adJ-Qm-0px" firstAttribute="top" secondItem="bkM-ca-oqa" secondAttribute="bottom" constant="15" id="6p9-aV-1iE"/>
-                            <constraint firstItem="0mD-7D-fVa" firstAttribute="top" secondItem="7sB-1p-f5t" secondAttribute="bottom" constant="60" id="7yX-7K-tww"/>
-                            <constraint firstItem="7sB-1p-f5t" firstAttribute="leading" secondItem="Lqh-KF-QoC" secondAttribute="leading" id="BIC-2p-tTD"/>
                             <constraint firstItem="bkM-ca-oqa" firstAttribute="leading" secondItem="UAL-g0-0zK" secondAttribute="leadingMargin" constant="-20" id="C8C-Ut-IGh"/>
                             <constraint firstItem="adJ-Qm-0px" firstAttribute="centerX" secondItem="UAL-g0-0zK" secondAttribute="centerX" id="GX8-5d-FC0"/>
-                            <constraint firstItem="Lqh-KF-QoC" firstAttribute="trailing" secondItem="7sB-1p-f5t" secondAttribute="trailing" id="H0b-GK-43o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bkM-ca-oqa" secondAttribute="trailing" constant="-20" id="Hqi-nA-iYU"/>
                             <constraint firstItem="INI-hv-Pbf" firstAttribute="leading" secondItem="UAL-g0-0zK" secondAttribute="leadingMargin" constant="-20" id="Jh9-sx-He3"/>
                             <constraint firstItem="INI-hv-Pbf" firstAttribute="top" secondItem="adJ-Qm-0px" secondAttribute="bottom" constant="8" id="K6V-bQ-5VR"/>
                             <constraint firstItem="bkM-ca-oqa" firstAttribute="top" secondItem="0mD-7D-fVa" secondAttribute="bottom" constant="8" id="NZJ-Ye-1Ho"/>
-                            <constraint firstItem="7sB-1p-f5t" firstAttribute="top" secondItem="Lqh-KF-QoC" secondAttribute="bottom" constant="19" id="Oim-g3-EaE"/>
                             <constraint firstItem="0mD-7D-fVa" firstAttribute="centerX" secondItem="UAL-g0-0zK" secondAttribute="centerX" id="SXj-oJ-IzK"/>
                             <constraint firstItem="Lqh-KF-QoC" firstAttribute="leading" secondItem="rME-Qt-V8K" secondAttribute="trailing" constant="15" id="dMd-yV-gKW"/>
                             <constraint firstItem="rME-Qt-V8K" firstAttribute="top" secondItem="7OJ-us-8ma" secondAttribute="bottom" constant="10" id="gMq-tM-A9E"/>
@@ -869,7 +862,6 @@
                     </view>
                     <connections>
                         <outlet property="attendingTable" destination="bkM-ca-oqa" id="s7V-F4-U8V"/>
-                        <outlet property="descriptionLabel" destination="7sB-1p-f5t" id="t0w-aR-rr0"/>
                         <outlet property="gathurPostsTable" destination="INI-hv-Pbf" id="IDC-BI-IHH"/>
                         <outlet property="nameLabel" destination="Lqh-KF-QoC" id="G0B-q3-Wnm"/>
                         <outlet property="profilePic" destination="rME-Qt-V8K" id="VIK-5D-mqW"/>
@@ -1286,6 +1278,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sbf-gX-mCE"/>
+        <segue reference="ohn-sV-QuZ"/>
     </inferredMetricsTieBreakers>
 </document>

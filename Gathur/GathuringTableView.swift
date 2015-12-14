@@ -257,11 +257,13 @@ class GathuringTableView: UITableViewController {
             let targetController = segue.destinationViewController as! ProfileViewController
             targetController.username = currentEventUserId[indexPath]
             targetController.userID = currentEventRealUserId[indexPath]
+            
         }
         else if(segue.identifier == "userProfileIdentifier"){
             let indexPath = index
             let targetController = segue.destinationViewController as! UserProfileVC
             targetController.userID = currentEventRealUserId[indexPath]
+            targetController.currUser = self.currUser
         
         }
         else if(segue.identifier == "details"){

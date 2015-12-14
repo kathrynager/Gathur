@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDataSource {
-
+    
     
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var userDescription: UILabel!
@@ -37,15 +37,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         name.text = username
         profilePic.image = UIImage(named:"DefaultPic.jpg")
         
         // Get user's gathurings
-       let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
+        let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
         let headers = ["Authorization ": "Token " + authToken]
-
+        
         var i = 0;
         
         Alamofire.request(.GET, "https://gathur.herokuapp.com/api/events", parameters:["user_id": userID], headers: headers)
@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("userGathurCells", forIndexPath: indexPath) as! UserGathuringsTableViewCell
         print(currentEventTitle[indexPath.row])
         cell.gathuring.text = currentEventTitle[indexPath.row]
-
+        
         return cell
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
-                       }
-    }
+            }
+        }
     }
 }

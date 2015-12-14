@@ -116,7 +116,31 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         }
         self.viewDidLoad()
     }
- 
+    func convertUTC (input : String) -> [String] {
+        
+        assert(input.characters.count == 24)
+        
+        let idx = input.endIndex.advancedBy(-5)
+        
+        let rawDateString = input.substringToIndex(idx)
+        
+        var date : NSDate
+        let formatter = NSDateFormatter()
+        
+        formatter.dateFormat = "YYYY-MM-DD'T'hh:mm:ss"
+        print((rawDateString))
+        date = formatter.dateFromString(rawDateString)!
+        
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        var toReturn = [formatter.stringFromDate(date)]
+        formatter.dateStyle = NSDateFormatterStyle.NoStyle
+        
+        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        toReturn.append(formatter.stringFromDate(date))
+        
+        return toReturn
+        
+    }
     
     override func viewDidLoad() {
         
@@ -124,22 +148,13 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         commentsTable.delegate = self
         commentsTable.dataSource = self
         
-        // Format the date to acceptable viewing string
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
-       // formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
-//        var index = currentEventStartTime.rangeOfString("T", options: nil)?.startIndex
-//        
-//        var substring2 = string2.substringToIndex(index!)
-//        var date = formatter.dateFromString(currentEventStartTime)
-//        let startDate = formatter.stringFromDate(date!)
-        
-        
         gathurTitle.text = currentEventTitle
         gathurDescription.text = currentEventDes
-    //    startDatelabel.text = startDate
-        endDateLabel.text = currentEventEndTime
+        var startArray = convertUTC(currentEventStartTime)
+        var endArray = convertUTC(currentEventEndTime)
+
+        startDatelabel.text = startArray[0] + " " + startArray[1]
+        endDateLabel.text = endArray[0] + " " + endArray[1]
         profilePic.image = UIImage(named: "DefaultPic")
         nameGathurProfile.text = currentEventUserId
         
@@ -176,11 +191,10 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
             parameters: ["event_id":eventid], headers: headers) .responseJSON
             { response in debugPrint(response)
                 if let JSON = response.result.value {
-                    self.currentInvitedUsers = [String](count: JSON.count, repeatedValue: "")
                     for(var i = 0; i < JSON.count; i++){
                         let item = JSON[i]
                         // Add users to array
-                        self.currentInvitedUsers[i] = item["display_name"] as! String
+                        self.currentInvitedUsers.append(item["display_name"] as! String)
                     }
                     var boolAttend = false
                     for(var i = 0; i < self.currentInvitedUsers.count; i++){
@@ -188,42 +202,6 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
                             boolAttend = true
                         }
                     }
-                    print(self.currentInvitedUsers.count)
-                    
-                    let widthConstraint = NSLayoutConstraint(item: self.attendees, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 200)
-                    self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
-                            self.attendees.addConstraint(widthConstraint)
-//                        if(boolAttend == false){
-//                        self.attendButtonTitle.titleLabel?.text = "Attend"
-//                        if(self.currentInvitedUsers.count == 1){
-//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendee"
-//                            
-//                        }else if(self.currentInvitedUsers.isEmpty){
-//                            self.attendees.titleLabel?.text = "0 Attendees"
-//                        }
-//                        else{
-//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
-//                        }
-//                    }
-//                    else{
-//                        self.attendButtonTitle.titleLabel?.text = "Unattend"
-//                        if(self.currentInvitedUsers.count == 1){
-//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendee"
-//                            self.attendees.addConstraint(widthConstraint)
-//
-//                            
-//                        }else if(self.currentInvitedUsers.isEmpty){
-//                            self.attendees.titleLabel?.text = "0 Attendees"
-//                            self.attendees.addConstraint(widthConstraint)
-//
-//                        }
-//                        else{
-//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
-//                            self.attendees.addConstraint(widthConstraint)
-//
-//
-//                    }
-//                                }
         }
         }
     }

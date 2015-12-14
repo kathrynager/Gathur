@@ -19,6 +19,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
     @IBOutlet weak var gathurPostsTable: UITableView!
     
     var userID = 0
+    var currUser = ""
     
     // Parsed JSON arrays
     var currentEventLoc = [String]()
@@ -29,9 +30,19 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
     var currentEventDes:[String] = []
     var currentUserId:[String] = []
     
+    var attendLoc = [String]()
+    var attendEndTime:[String] = []
+    var attendid = [Int]()
+    var attendTitle:[String] = []
+    var attendStartTime:[String] = []
+    var attendDes:[String] = []
+    var cattendId:[String] = []
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        nameLabel.text = currUser
+        profilePic.image = UIImage(named: "DefaultPic")
         
         // Get user's postings
         let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
@@ -69,6 +80,30 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                     self.gathurPostsTable.reloadData()
                 }
         }
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/invitations/accepted",  headers: headers)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    
+                    for(i = 0; i < JSON.count;i++){
+                        let item = JSON[i]
+                        
+                        self.attendid.append(item["id"] as! Int)
+                        self.attendStartTime.append(item["start_time"] as! String)
+                        self.attendEndTime.append(item["end_time"] as! String)
+                        self.attendTitle.append(item["title"] as! String)
+                        self.attendDes.append(item["description"] as! String)
+                        self.attendLoc.append(item["location"] as! String)
+                    }
+                    self.attendingTable.reloadData()
+                    self.gathurPostsTable.reloadData()
+                }
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,7 +125,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
         if (tableView == attendingTable){
             let cell = tableView.dequeueReusableCellWithIdentifier("rsvpCell", forIndexPath: indexPath) as! RsvpCell
             cell.profPic.image = UIImage(named: "DefaultPic")
-            //cell.titleLabel.text = [indexPath.row]
+            cell.titleLabel.text = attendTitle[indexPath.row]
             return cell
             
         }
@@ -117,6 +152,17 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
+            }
+        }
+        else{
+            if let indexPath = self.attendingTable.indexPathForSelectedRow{
+                let targetController = segue.destinationViewController as! GathurDetailsViewController
+                targetController.currentEventStartTime = attendStartTime[indexPath.row]
+                targetController.currentEventTitle = attendTitle[indexPath.row]
+                targetController.currentEventLoc = attendLoc[indexPath.row]
+                targetController.currentEventEndTime = attendEndTime[indexPath.row]
+                targetController.currentEventid = attendid[indexPath.row]
+                targetController.currentEventDes = attendDes[indexPath.row]
             }
         }
     }
