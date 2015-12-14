@@ -10,10 +10,6 @@ import UIKit
 
 class FriendsListTableViewCell: UITableViewCell {
 
-
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
-
-
-
 }

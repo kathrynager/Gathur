@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FriendsAttendingTableViewController: UITableViewController {
-   
-    var gathurObj = GathurObj()
+    
+    var eventid = 0
+    var attendees = []
+    var currentInvitedUsers :[String] = []
+    
+    @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+  
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,15 +38,14 @@ class FriendsAttendingTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return gathurObj.friends.count
+        return currentInvitedUsers.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("friendsIdentifier", forIndexPath: indexPath) as! FriendsListTableViewCell
-        print(gathurObj.title)
-        cell.name.text = gathurObj.friends[indexPath.row].firstName! + " " + gathurObj.friends[indexPath.row].lastName!
-        cell.profPic.image = gathurObj.friends[indexPath.row].profilePic
+        cell.name.text = currentInvitedUsers[indexPath.row]
+        cell.profPic.image = UIImage(named: "DefaultPic")
         return cell
     }
-
+    
 }

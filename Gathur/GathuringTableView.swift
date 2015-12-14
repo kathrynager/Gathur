@@ -11,14 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 
-
 class GathuringTableView: UITableViewController {
     
-    //until database implemented list of events
-    var gathurList : [GathurObj] = []
-    var profileList : [Profile] = []
-    var currUser = Profile()
-    
+    var currUser = ""
     var currentEventLoc = [String]()
     var currentEventEndTime:[String] = []
     var currentEventPub = NSObject()
@@ -31,11 +26,7 @@ class GathuringTableView: UITableViewController {
     var currentEventDes:[String] = []
     var currentEventRealUserId:[Int] = []
     
-    @IBAction func newGathuring(sender: AnyObject) {
-    }
-    
     @IBOutlet var table: UITableView!
-    
     
     override func viewDidLoad() {
         
@@ -83,45 +74,6 @@ class GathuringTableView: UITableViewController {
                 }
                 self.table.reloadData()
         }
-        
-//        if(gathurList.isEmpty){
-//            let profOne = Profile( firstName: "Kathryn", lastName: "Ager", username: "kmager", description: "HELLO" , location: "Madison", password: "mypass")
-//            let profTwo = Profile(firstName: "Person", lastName: "Two", username: "two", description: "Student" , location: "Madison", password: "mypass")
-//            let profThree = Profile(firstName: "Harry", lastName: "Potter", username: "HPott", description: "School of Wizardry" , location: "Hogwarts", password: "mypass", profilePic: UIImage(named: "DefaultPic.jpg")!)
-//            var profFour = Profile(firstName: "Voldemort", lastName: "Riddle", username: "Tom", description: "" , location: "", password: "mypass",profilePic: UIImage(named: "DefaultPic.jpg")!)
-//            
-//            
-//            let one = GathurObj(title: "FUN", profile: profOne)
-//            let two = GathurObj(title: "Study Group", profile: profTwo, location: "Madison", description: "So fun")
-//            let three = GathurObj(title: "Quiditch", profile: profThree, location: "Hogwarts", description: "Watch")
-//            let four = GathurObj(title: "Death Eaters party", profile: profFour, location: "Voldemorts House", description: "Fun")
-//            
-//            let fourParty = GathurObj(title: "FUN1", profile: profFour)
-//            let fourpartyTwo =  GathurObj(title: "FUN2", profile: profFour)
-//            let fourpartyThree = GathurObj(title: "FUN3", profile: profFour)
-//            
-//            profFour.gathurList.append(fourParty)
-//            profFour.gathurList.append(fourpartyThree)
-//            profFour.gathurList.append(fourpartyTwo)
-//            
-//            gathurList.append(one)
-//            gathurList.append(two)
-//            gathurList.append(three)
-//            gathurList.append(four)
-//            
-//            
-//            profileList.append(profOne)
-//            profileList.append(profTwo)
-//            profileList.append(profThree)
-//            profileList.append(profFour)
-//           // profileList.append(currUser)
-//            currUser = profOne
-//
-//        }
-//        else{
-//            table.reloadData()
-//        }
-
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -165,11 +117,7 @@ class GathuringTableView: UITableViewController {
         cell.gathurTitle.text = currentEventTitle[indexPath.row]
         cell.profilePic.image = UIImage(named: "DefaultPic")
         cell.username.text = currentEventUserId[indexPath.row]
-      //  cell.profile = gathurList[indexPath.row].profile
-       // cell.gathurObj = gathurList[indexPath.row]
-        cell.currUser = currUser
 
-        
         return cell
     }
     
@@ -228,6 +176,12 @@ class GathuringTableView: UITableViewController {
         index = (sender.view?.tag)!
         let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
         let headers = ["Authorization ": "Token " + authToken]
+        var currentuserfn = ""
+        var currentuserls = ""
+        var currentuseremail = ""
+        var currentuserphone = ""
+        
+        
         Alamofire.request(.GET, "https://gathur.herokuapp.com/api/users/me", headers: headers)
             .responseJSON { response in
                 print(response.request)  // original URL request
@@ -236,18 +190,25 @@ class GathuringTableView: UITableViewController {
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+                    currentuserfn = JSON["first_name"] as! String
+                    currentuserls  = JSON["last_name"] as! String
+                    currentuseremail = JSON["email"] as! String
+                    currentuserphone = JSON["phone"] as! String
+                    
+                    print("This is me")
+                    print(currentuserfn)
+                    print(currentuserls)
+                    print(currentuseremail)
+                    print(currentuserphone)
+                }
+                if(self.currentEventUserId[self.index] == (currentuserfn + " " + currentuserls)){
+                    self.currUser = currentuserfn + " " + currentuserls
+                    self.performSegueWithIdentifier("userProfileIdentifier", sender: self)
+                }
+                else{
+                    self.performSegueWithIdentifier("profileSegue", sender: self)
                 }
         }
-       // var currUser =
-        if(self.currentEventUserId[self.index] == "me" ){
-            self.performSegueWithIdentifier("userProfileIdentifier", sender: self)
-            }
-        else{
-            self.performSegueWithIdentifier("profileSegue", sender: self)
- 
-        }
-
     }
     
     /*
@@ -293,13 +254,15 @@ class GathuringTableView: UITableViewController {
         //Pass the selected object to the new view controller.
         if(segue.identifier == "profileSegue"){
             let indexPath = index
-           // let selectedEvent = currentEventTitle[indexPath]
             let targetController = segue.destinationViewController as! ProfileViewController
-            //targetController.user = selectedEvent.profile!
-            //targetController.profList = profileList
-            //targetController.currUser = currUser
             targetController.username = currentEventUserId[indexPath]
             targetController.userID = currentEventRealUserId[indexPath]
+        }
+        else if(segue.identifier == "userProfileIdentifier"){
+            let indexPath = index
+            let targetController = segue.destinationViewController as! UserProfileVC
+            targetController.userID = currentEventRealUserId[indexPath]
+        
         }
         else if(segue.identifier == "details"){
             if let indexPath = self.table.indexPathForSelectedRow{
@@ -307,14 +270,13 @@ class GathuringTableView: UITableViewController {
                 targetController.currentEventTitle = currentEventTitle[indexPath.row]
                 targetController.currentEventLoc = currentEventLoc[indexPath.row]
                 targetController.currentEventEndTime = currentEventEndTime[indexPath.row]
-//                let selectedPub = currentEventPub[indexPath.row]
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventCreatedTime = currentEventCreatedTime[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventUserId = currentEventUserId[indexPath.row]
                 targetController.currentEventUpdatedTime = currentEventUpdatedTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
-              //  targetController.currentEventRealUserId = currentEventRealUserId[indexPath.row]
+                targetController.currUser = self.currUser
             }
         }
         else if(segue.identifier == "signOutIdentifier"){
@@ -325,8 +287,6 @@ class GathuringTableView: UITableViewController {
         }
         else if(segue.identifier == "newGathuringVC"){
             let targetController = segue.destinationViewController as! NewGathurViewController
-            targetController.currUser = currUser
-            
         }
     }
 }

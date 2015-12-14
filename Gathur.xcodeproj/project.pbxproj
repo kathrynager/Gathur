@@ -28,10 +28,11 @@
 		077B57331BFE8E0E00E34DD0 /* GathurDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */; };
 		079D7A9C1C1C7CF30094F3C5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */; };
 		079D7A9D1C1C7CF30094F3C5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7A8F1C1C7CD60094F3C5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */; };
 		079D7AD41C1CEDD70094F3C5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7AC71C1CEDCE0094F3C5 /* SwiftyJSON.framework */; };
 		079D7AD51C1CEDD70094F3C5 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 079D7AC71C1CEDCE0094F3C5 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07AAB5871C1E07A3003A7888 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */; };
+		07AAB5951C1E2732003A7888 /* RsvpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAB5941C1E2732003A7888 /* RsvpCell.swift */; };
+		07AAB5971C1E274A003A7888 /* UserGathurCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAB5961C1E274A003A7888 /* UserGathurCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,9 +206,10 @@
 		077B57301BFD6C8000E34DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		077B57321BFE8E0E00E34DD0 /* GathurDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GathurDetailsViewController.swift; sourceTree = "<group>"; };
 		079D7A841C1C7CD60094F3C5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../Documents/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGathuringsTableViewController.swift; sourceTree = "<group>"; };
 		079D7AB61C1CEDCE0094F3C5 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../Documents/SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		07AAB5941C1E2732003A7888 /* RsvpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsvpCell.swift; sourceTree = "<group>"; };
+		07AAB5961C1E274A003A7888 /* UserGathurCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGathurCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,8 +282,9 @@
 				072ADE271C1B4C22004C2E60 /* CommentsTableViewCell.swift */,
 				072ADE291C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift */,
 				072ADE2B1C1B6AC7004C2E60 /* FriendsListTableViewCell.swift */,
-				079D7AA21C1C9A360094F3C5 /* MyGathuringsTableViewController.swift */,
 				07AAB5861C1E07A3003A7888 /* UserProfileVC.swift */,
+				07AAB5941C1E2732003A7888 /* RsvpCell.swift */,
+				07AAB5961C1E274A003A7888 /* UserGathurCell.swift */,
 			);
 			path = Gathur;
 			sourceTree = "<group>";
@@ -587,11 +590,12 @@
 				07AAB5871C1E07A3003A7888 /* UserProfileVC.swift in Sources */,
 				077B57231BFA87CC00E34DD0 /* RegisterPageViewController.swift in Sources */,
 				072ADE281C1B4C22004C2E60 /* CommentsTableViewCell.swift in Sources */,
-				079D7AA31C1C9A360094F3C5 /* MyGathuringsTableViewController.swift in Sources */,
 				072ADE261C18CE31004C2E60 /* UserGathuringsTableViewCell.swift in Sources */,
 				072ADE2A1C1B6A12004C2E60 /* FriendsAttendingTableViewController.swift in Sources */,
+				07AAB5971C1E274A003A7888 /* UserGathurCell.swift in Sources */,
 				075D78761BED44E500AEB08E /* AppDelegate.swift in Sources */,
 				0712FB351BF579220090EF1F /* GathurObj.swift in Sources */,
+				07AAB5951C1E2732003A7888 /* RsvpCell.swift in Sources */,
 				0712FB331BF577B40090EF1F /* GathuringTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,38 +9,9 @@
 import UIKit
 
 class UserGathuringsTableViewCell: UITableViewCell {
-
-    var currUser = Profile()
-    var gathurObj = GathurObj()
     
-    @IBOutlet weak var attendTitle: UIButton!
     @IBOutlet weak var gathuring: UILabel!
-    @IBAction func attend(sender: AnyObject) {
-        if(gathurObj.friends.isEmpty){
-            gathurObj.friends.append(currUser)
-            attendTitle.setTitle("Unattend", forState: .Normal)
-        }
-        else{
-            var alreadyAttending = false
-            for i in 0..<gathurObj.friends.count {
-                if(gathurObj.friends[i].username == currUser.username){
-                    gathurObj.friends.removeAtIndex(i)
-                    alreadyAttending = true
-                    attendTitle.setTitle("Attend", forState: .Normal)
-                }
-            }
-            if(alreadyAttending == false){
-                gathurObj.friends.append(currUser)
-                attendTitle.setTitle("Unattend", forState: .Normal)
-            } else{
-                for i in 0..<currUser.eventsAttending.count{
-                    if currUser.eventsAttending[i].title == gathurObj.title{
-                        currUser.eventsAttending.removeAtIndex(i)
-                    }
-                }
-            }
-        }
-    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

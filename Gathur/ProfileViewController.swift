@@ -27,12 +27,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     var currentEventLoc = [String]()
     var currentEventEndTime:[String] = []
     var currentEventid = [Int]()
-    //    var currentEventCreatedTime:[String] = []
     var currentEventTitle:[String] = []
     var currentEventStartTime:[String] = []
-    //    var currentEventUpdatedTime:[String] = []
     var currentEventDes:[String] = []
-    
     var currentUserId:[String] = []
     
     
@@ -67,10 +64,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                     self.currentEventTitle = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventDes = [String](count: JSON.count, repeatedValue: "")
                     self.currentEventLoc = [String](count: JSON.count, repeatedValue: "")
-                   // self.currentUserId = [String](count: JSON.count, repeatedValue: "")
-
-                    // currentEventCreatedTime = [String](count: JSON.count, repeatedValue: "")
-                    //  currentEventUpdatedTime = [String](count: JSON.count, repeatedValue: "")
                     
                     for(i = 0; i < JSON.count;i++){
                         let item = JSON[i]
@@ -81,23 +74,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                         self.currentEventTitle[i] = item["title"] as! String
                         self.currentEventDes[i] = item["description"] as! String
                         self.currentEventLoc[i] = item["location"] as! String
-                       /// self.currentUserId[i] = item["user_id"] as! String
-                        //  currentEventCreatedTime[i] = item["created_at"] as! String
-                        //  currentEventUpdatedTime[i] = item["updated_at"] as! String
                     }
                     self.userGathurings.reloadData()
-
-                }
-                for(i = 0; i < self.currentEventid.count; i++){
-                    print("This is the \(i) th event")
-                    print(self.currentEventid[i])
-                    print(self.currentEventStartTime[i])
-                    print(self.currentEventEndTime[i])
-                    print(self.currentEventTitle[i])
-                    print(self.currentEventDes[i])
-                    print(self.currentEventLoc[i])
-                    //print(currentEventCreatedTime[i])
-                    //print(currentEventUpdatedTime[i])
                 }
         }
     }
@@ -129,10 +107,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                 targetController.currentEventLoc = currentEventLoc[indexPath.row]
                 targetController.currentEventEndTime = currentEventEndTime[indexPath.row]
                 targetController.currentEventid = currentEventid[indexPath.row]
-               // targetController.currentEventCreatedTime = currentEventCreatedTime[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
-               // targetController.currentEventUserId = currentEventUserId[indexPath.row]
-               // targetController.currentEventUpdatedTime = currentEventUpdatedTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
                        }
     }

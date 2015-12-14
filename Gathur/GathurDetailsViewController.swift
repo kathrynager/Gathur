@@ -11,6 +11,7 @@ import Alamofire
 
 class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var currUser = ""
     var currentEventLoc = ""
     var currentEventEndTime = ""
     var currentEventPub = ""
@@ -22,7 +23,7 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var currentEventUpdatedTime = ""
     var currentEventDes = ""
     var currentEventRealUserId = 0
-    
+    var currentInvitedUsers :[String] = []
     
     //comment table vars for JSON
     var currentmsg:[String] = []
@@ -30,14 +31,15 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var startDatelabel: UILabel!
-    @IBAction func back(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-        let view : GathuringTableView = self.navigationController?.topViewController as! GathuringTableView
-        
-    }
-    
     @IBOutlet weak var attendees: UIButton!
     @IBOutlet weak var comment: UITextField!
+    @IBOutlet weak var nameGathurProfile: UILabel!
+    @IBOutlet weak var commentsTable: UITableView!
+    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var gathurTitle: UILabel!
+    @IBOutlet weak var gathurDescription: UILabel!
+    @IBOutlet weak var attendButtonTitle: UIButton!
+    
     @IBAction func post(sender: AnyObject) {
         if(comment.text != nil){
             var message = comment.text
@@ -87,48 +89,38 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     }
     // Add user to attending list and change attend button between unattend & attend
     @IBAction func attend(sender: AnyObject) {
-        //        if(gathurObj.friends.isEmpty){
-        //            gathurObj.friends.append(currUser)
-        //             attendButtonTitle.setTitle("Unattend", forState: .Normal)
-        //            currUser.eventsAttending.append(gathurObj)
-        //        }
-        //        else{
-        //            var alreadyAttending = false
-        //            for i in 0..<gathurObj.friends.count {
-        //                if(gathurObj.friends[i].username == currUser.username){
-        //                    gathurObj.friends.removeAtIndex(i)
-        //                    alreadyAttending = true
-        //                     attendButtonTitle.setTitle("Attend", forState: .Normal)
-        //                }
-        //            }
-        //            if(alreadyAttending == false){
-        //                gathurObj.friends.append(currUser)
-        //                attendButtonTitle.setTitle("Unattend", forState: .Normal)
-        //                currUser.eventsAttending.append(gathurObj)
-        //
-        //            }
-        //            else{
-        //                for i in 0..<currUser.eventsAttending.count{
-        //                    if currUser.eventsAttending[i].title == gathurObj.title{
-        //                        currUser.eventsAttending.removeAtIndex(i)
-        //                    }
-        //                }
-        // }
-        // }
+        
+        let token = NSUserDefaults.standardUserDefaults().stringForKey("token")!
+
+        let eventid = currentEventid
+        let headers = ["Authorization ": "Token " + token]
+        
+        var currentevent = ""
+        var currentacceptstatus = true;
+        
+        Alamofire.request(.POST, "https://gathur.herokuapp.com/api/invitations/toggle",parameters: ["event_id":eventid],headers: headers) .responseJSON
+            { response in
+                debugPrint(response)
+                if let JSON = response.result.value {
+                    currentevent = JSON["display_name"] as! String
+                    currentacceptstatus = JSON["accepted"] as! Bool
+                    print(currentacceptstatus)
+                    
+//                    if(currentacceptstatus == true){
+//                        self.attendButtonTitle.setTitle("Attend", forState: .Normal)
+//                    }
+//                    else{
+//                        self.attendButtonTitle.setTitle("Unattend", forState: .Normal)
+//                    }
+                }
+        }
         self.viewDidLoad()
     }
-    @IBOutlet weak var nameGathurProfile: UILabel!
-    @IBOutlet weak var commentsTable: UITableView!
-    @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var gathurTitle: UILabel!
-    @IBOutlet weak var gathurDescription: UILabel!
-    @IBOutlet weak var attendButtonTitle: UIButton!
+ 
     
     override func viewDidLoad() {
         
-        super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
-        
+        super.viewDidLoad()        
         commentsTable.delegate = self
         commentsTable.dataSource = self
         
@@ -152,30 +144,10 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         nameGathurProfile.text = currentEventUserId
         
         // Adjust title for Attendee(s)
-        //        if(gathurObj.friends.count == 1){
-        //            attendees.setTitle("\(gathurObj.friends.count) Attendee", forState: .Normal)
-        //
-        //        }
-        //        else{
-        //            attendees.setTitle("\(gathurObj.friends.count) Attendees", forState: .Normal)
-        //        }
-        
-        // Adjust button title unattend or attend
-        //        var alreadyAttending = false
-        //        for i in 0..<gathurObj.friends.count {
-        //            if(gathurObj.friends[i].username == currUser.username){
-        //                alreadyAttending = true
-        //                attendButtonTitle.setTitle("Unattend", forState: .Normal)
-        //            }
-        //        }
-        //        if(alreadyAttending == false){
-        //            attendButtonTitle.setTitle("Attend", forState: .Normal)
-        //
-        //        }
+        let token = NSUserDefaults.standardUserDefaults().stringForKey("token")!
         
         let eventid = currentEventid
-        let usertoken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
-        let headers = ["Authorization ": "Token " + usertoken]
+        let headers = ["Authorization ": "Token " + token]
         
         Alamofire.request(.GET, "https://gathur.herokuapp.com/api/messages",
             parameters:["event_id": eventid],headers: headers)
@@ -196,8 +168,63 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
                         self.currentname[i] = item["display_name"] as! String
                         self.currentmsg[i] = item["text"] as! String
                     }
-                    self.commentsTable.reloadData()
+                    self.commentsTable.reloadData() //reload table
                 }
+        }
+        // Get all friends attending
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/invitations/event",
+            parameters: ["event_id":eventid], headers: headers) .responseJSON
+            { response in debugPrint(response)
+                if let JSON = response.result.value {
+                    self.currentInvitedUsers = [String](count: JSON.count, repeatedValue: "")
+                    for(var i = 0; i < JSON.count; i++){
+                        let item = JSON[i]
+                        // Add users to array
+                        self.currentInvitedUsers[i] = item["display_name"] as! String
+                    }
+                    var boolAttend = false
+                    for(var i = 0; i < self.currentInvitedUsers.count; i++){
+                        if(self.currentInvitedUsers[i] == self.currUser){
+                            boolAttend = true
+                        }
+                    }
+                    print(self.currentInvitedUsers.count)
+                    
+                    let widthConstraint = NSLayoutConstraint(item: self.attendees, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 200)
+                    self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
+                            self.attendees.addConstraint(widthConstraint)
+//                        if(boolAttend == false){
+//                        self.attendButtonTitle.titleLabel?.text = "Attend"
+//                        if(self.currentInvitedUsers.count == 1){
+//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendee"
+//                            
+//                        }else if(self.currentInvitedUsers.isEmpty){
+//                            self.attendees.titleLabel?.text = "0 Attendees"
+//                        }
+//                        else{
+//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
+//                        }
+//                    }
+//                    else{
+//                        self.attendButtonTitle.titleLabel?.text = "Unattend"
+//                        if(self.currentInvitedUsers.count == 1){
+//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendee"
+//                            self.attendees.addConstraint(widthConstraint)
+//
+//                            
+//                        }else if(self.currentInvitedUsers.isEmpty){
+//                            self.attendees.titleLabel?.text = "0 Attendees"
+//                            self.attendees.addConstraint(widthConstraint)
+//
+//                        }
+//                        else{
+//                            self.attendees.titleLabel?.text = "\(self.currentInvitedUsers.count) Attendees"
+//                            self.attendees.addConstraint(widthConstraint)
+//
+//
+//                    }
+//                                }
+        }
         }
     }
     
@@ -229,10 +256,12 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         
         return cell
     }
+    // Segue prep
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "attendeesIdentifier"){
             let targetController = segue.destinationViewController as! FriendsAttendingTableViewController
-            // targetController.gathurObj = gathurObj
+            targetController.eventid = currentEventid
+            targetController.currentInvitedUsers = self.currentInvitedUsers
         }
     }
 }
