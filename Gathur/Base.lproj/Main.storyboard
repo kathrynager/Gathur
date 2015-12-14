@@ -22,6 +22,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gathuring" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUx-iG-dEd">
                                 <rect key="frame" x="174" y="161" width="253" height="30"/>
                                 <animations/>
+                                <color key="tintColor" red="0.81255454360000001" green="0.028286261699999999" blue="0.017015288369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="253" id="G1T-46-cLP"/>
                                     <constraint firstAttribute="width" secondItem="aUx-iG-dEd" secondAttribute="height" multiplier="253:30" id="aBW-G7-Xhr"/>
@@ -32,6 +33,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-Cz-MRR">
                                 <rect key="frame" x="174" y="196" width="253" height="30"/>
                                 <animations/>
+                                <color key="tintColor" red="0.81255454360000001" green="0.028286261699999999" blue="0.017015288369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Czz-CX-BrZ"/>
                                     <constraint firstAttribute="width" constant="253" id="hVo-ls-tEy"/>
@@ -128,6 +130,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cur-Dm-hPH">
                                 <rect key="frame" x="174" y="231" width="253" height="30"/>
                                 <animations/>
+                                <color key="tintColor" red="0.81255454360000001" green="0.028286261699999999" blue="0.017015288369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bzn-ez-Jy3"/>
                                     <constraint firstAttribute="width" secondItem="cur-Dm-hPH" secondAttribute="height" multiplier="253:30" id="HqM-qB-yrX"/>
@@ -1628,6 +1631,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sbf-gX-mCE"/>
+        <segue reference="ohn-sV-QuZ"/>
     </inferredMetricsTieBreakers>
 </document>
