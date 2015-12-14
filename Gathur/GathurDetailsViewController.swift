@@ -25,6 +25,8 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var currentEventRealUserId = 0
     var currentInvitedUsers :[String] = []
     
+    
+    
     //comment table vars for JSON
     var currentmsg:[String] = []
     var currentname:[String] = []
@@ -118,25 +120,24 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
     }
     func convertUTC (input : String) -> [String] {
         
-        assert(input.characters.count == 24)
-        
-        let idx = input.endIndex.advancedBy(-5)
-        
+        let idx = input.startIndex.advancedBy(10)
+        let idxTwo = input.startIndex.advancedBy(11)
         let rawDateString = input.substringToIndex(idx)
+        var lastString = input.substringFromIndex(idxTwo)
+        let lastIdx = lastString.startIndex.advancedBy(5)
+        lastString = lastString.substringToIndex(lastIdx)
         
-        var date : NSDate
         let formatter = NSDateFormatter()
-        
-        formatter.dateFormat = "YYYY-MM-DD'T'hh:mm:ss"
-        print((rawDateString))
+
+        var date : NSDate
+        formatter.dateFormat = "YYYY-MM-DD"
+
+        print((input))
         date = formatter.dateFromString(rawDateString)!
-        
         formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         var toReturn = [formatter.stringFromDate(date)]
         formatter.dateStyle = NSDateFormatterStyle.NoStyle
-        
-        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        toReturn.append(formatter.stringFromDate(date))
+        toReturn.append(lastString)
         
         return toReturn
         
@@ -239,7 +240,7 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
         if(segue.identifier == "attendeesIdentifier"){
             let targetController = segue.destinationViewController as! FriendsAttendingTableViewController
             targetController.eventid = currentEventid
-            targetController.currentInvitedUsers = self.currentInvitedUsers
+//            targetController.currentInvitedUsers = self.currentInvitedUsers
         }
     }
 }

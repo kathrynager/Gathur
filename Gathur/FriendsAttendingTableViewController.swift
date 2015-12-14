@@ -13,15 +13,31 @@ import SwiftyJSON
 class FriendsAttendingTableViewController: UITableViewController {
     
     var eventid = 0
-    var attendees = []
     var currentInvitedUsers :[String] = []
-    
+    var currUser = ""
     @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-  
+        
+        let token = NSUserDefaults.standardUserDefaults().stringForKey("token")!
+        
+
+        let headers = ["Authorization ": "Token " + token]
+        
+        // Get all friends attending
+        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/invitations/event",
+            parameters: ["event_id":self.eventid], headers: headers) .responseJSON
+            { response in debugPrint(response)
+                if let JSON = response.result.value {
+                    for(var i = 0; i < JSON.count; i++){
+                        let item = JSON[i]
+                        // Add users to array
+                        self.currentInvitedUsers.append(item["display_name"] as! String)
+                    }
+                    self.table.reloadData()
+                }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

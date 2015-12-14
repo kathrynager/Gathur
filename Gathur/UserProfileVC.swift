@@ -100,7 +100,6 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                         self.attendLoc.append(item["location"] as! String)
                     }
                     self.attendingTable.reloadData()
-                    self.gathurPostsTable.reloadData()
                 }
         }
 
@@ -113,7 +112,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == attendingTable{
-            return 0
+            return attendTitle.count
         }
         else{
             return currentEventTitle.count // my posts
@@ -152,6 +151,8 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
+                targetController.currUser = currUser
+
             }
         }
         else{
@@ -163,6 +164,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                 targetController.currentEventEndTime = attendEndTime[indexPath.row]
                 targetController.currentEventid = attendid[indexPath.row]
                 targetController.currentEventDes = attendDes[indexPath.row]
+                targetController.currUser = currUser
             }
         }
     }
