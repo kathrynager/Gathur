@@ -187,24 +187,24 @@ class GathurDetailsViewController: UIViewController, UITableViewDataSource, UITa
                     self.commentsTable.reloadData() //reload table
                 }
         }
-        // Get all friends attending
-        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/invitations/event",
-            parameters: ["event_id":eventid], headers: headers) .responseJSON
-            { response in debugPrint(response)
-                if let JSON = response.result.value {
-                    for(var i = 0; i < JSON.count; i++){
-                        let item = JSON[i]
-                        // Add users to array
-                        self.currentInvitedUsers.append(item["display_name"] as! String)
-                    }
-                    var boolAttend = false
-                    for(var i = 0; i < self.currentInvitedUsers.count; i++){
-                        if(self.currentInvitedUsers[i] == self.currUser){
-                            boolAttend = true
-                        }
-                    }
-        }
-        }
+//        // Get all friends attending
+//        Alamofire.request(.GET, "https://gathur.herokuapp.com/api/invitations/event",
+//            parameters: ["event_id":eventid], headers: headers) .responseJSON
+//            { response in debugPrint(response)
+//                if let JSON = response.result.value {
+//                    for(var i = 0; i < JSON.count; i++){
+//                        let item = JSON[i]
+//                        // Add users to array
+//                        self.currentInvitedUsers.append(item["display_name"] as! String)
+//                    }
+//                    var boolAttend = false
+//                    for(var i = 0; i < self.currentInvitedUsers.count; i++){
+//                        if(self.currentInvitedUsers[i] == self.currUser){
+//                            boolAttend = true
+//                        }
+//                    }
+//        }
+//        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -30,6 +30,7 @@ class FriendsAttendingTableViewController: UITableViewController {
             parameters: ["event_id":self.eventid], headers: headers) .responseJSON
             { response in debugPrint(response)
                 if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
                     for(var i = 0; i < JSON.count; i++){
                         let item = JSON[i]
                         // Add users to array
