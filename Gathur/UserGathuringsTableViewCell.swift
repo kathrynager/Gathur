@@ -10,8 +10,10 @@ import UIKit
 
 class UserGathuringsTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var gathuring: UILabel!
-    
+    @IBOutlet weak var profPic: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

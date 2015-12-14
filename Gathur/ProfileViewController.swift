@@ -74,6 +74,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
                         self.currentEventTitle[i] = item["title"] as! String
                         self.currentEventDes[i] = item["description"] as! String
                         self.currentEventLoc[i] = item["location"] as! String
+                        self.currentUserId.append(item["creator_name"] as! String)
                     }
                     self.userGathurings.reloadData()
                 }
@@ -93,7 +94,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("userGathurCells", forIndexPath: indexPath) as! UserGathuringsTableViewCell
         print(currentEventTitle[indexPath.row])
         cell.gathuring.text = currentEventTitle[indexPath.row]
-        
+        cell.username.text = currentUserId[indexPath.row]
+        cell.profPic.image = UIImage(named: "DefaultPic")
         return cell
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

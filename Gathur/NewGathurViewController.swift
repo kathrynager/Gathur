@@ -11,27 +11,22 @@ import Alamofire
 
 class NewGathurViewController: UIViewController {
     
-    var newGathur = GathurObj()
     var currUser = Profile()
     
     @IBOutlet weak var gathurTitle: UITextField!
     @IBOutlet weak var gathurDescription: UITextField!
     @IBOutlet weak var location: UITextField!
-    
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
+        
         //set end date picker to an hour later
         var todayDate = NSDate().dateByAddingTimeInterval(3600)
         endDatePicker.setDate(todayDate, animated: true)
     }
     
     @IBAction func post(segue:UIStoryboardSegue) {
-        
-       
-      
-        newGathur.profile = currUser
 
         if(gathurTitle.text!.isEmpty || gathurDescription.text!.isEmpty || location.text!.isEmpty){
             let myAlert = UIAlertController(title: "Oops!", message:"All fields required", preferredStyle: UIAlertControllerStyle.Alert)
@@ -43,12 +38,8 @@ class NewGathurViewController: UIViewController {
         
         }
         else{
-            
-            newGathur.title = gathurTitle.text!
-            newGathur.location = location.text!
-            newGathur.description = gathurDescription.text!
+
         let authToken = NSUserDefaults.standardUserDefaults().stringForKey("token")!
-        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let dateFormatSeconds = NSDateFormatter()
@@ -57,9 +48,10 @@ class NewGathurViewController: UIViewController {
         let eventtitle = gathurTitle.text!
         let eventloc = location.text!
         let eventstarttime = dateFormatter.stringFromDate(datePicker.date) + " " + dateFormatSeconds.stringFromDate(datePicker.date) + ".000000"
-        //dateFormatter.stringFromDate(datePicker.date)  + " " + dateFormatSeconds.stringFromDate(datePicker.date)
+
+        // Check that end time is after start time
         var endDateTime = endDatePicker.date
-        if(datePicker.date.earlierDate(endDatePicker.date) == datePicker.date) {
+        if(datePicker.date.earlierDate(endDatePicker.date) == endDatePicker.date) {
             //end date an hour after start
             var laterDate = datePicker.date.dateByAddingTimeInterval(3600)
             endDatePicker.setDate(laterDate, animated: true)

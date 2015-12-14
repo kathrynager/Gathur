@@ -36,7 +36,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
     var attendTitle:[String] = []
     var attendStartTime:[String] = []
     var attendDes:[String] = []
-    var cattendId:[String] = []
+    var attendUserId:[String] = []
     
     override func viewDidLoad() {
         
@@ -75,6 +75,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                         self.currentEventTitle[i] = item["title"] as! String
                         self.currentEventDes[i] = item["description"] as! String
                         self.currentEventLoc[i] = item["location"] as! String
+                        self.currentUserId.append(item["creator_name"] as! String)
                     }
                     self.attendingTable.reloadData()
                     self.gathurPostsTable.reloadData()
@@ -92,12 +93,14 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                     for(i = 0; i < JSON.count;i++){
                         let item = JSON[i]
                         
-                        self.attendid.append(item["id"] as! Int)
+                        self.attendUserId.append(item["creator_name"] as! String)
                         self.attendStartTime.append(item["start_time"] as! String)
                         self.attendEndTime.append(item["end_time"] as! String)
                         self.attendTitle.append(item["title"] as! String)
                         self.attendDes.append(item["description"] as! String)
                         self.attendLoc.append(item["location"] as! String)
+                        self.attendid.append(item["id"] as! Int)
+                        
                     }
                     self.attendingTable.reloadData()
                 }
@@ -125,12 +128,14 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier("rsvpCell", forIndexPath: indexPath) as! RsvpCell
             cell.profPic.image = UIImage(named: "DefaultPic")
             cell.titleLabel.text = attendTitle[indexPath.row]
+            cell.usernameLabel.text = attendUserId[indexPath.row]
             return cell
             
         }
         else{
             let cell = tableView.dequeueReusableCellWithIdentifier("gathurPostCell", forIndexPath: indexPath) as! UserGathurCell
             cell.titleLabel.text = currentEventTitle[indexPath.row]
+            cell.profPic.image = UIImage(named: "DefaultPic")
             return cell
             
         }
@@ -151,6 +156,7 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                 targetController.currentEventid = currentEventid[indexPath.row]
                 targetController.currentEventStartTime = currentEventStartTime[indexPath.row]
                 targetController.currentEventDes = currentEventDes[indexPath.row]
+                targetController.currentEventUserId = currentUserId[indexPath.row]
                 targetController.currUser = currUser
 
             }
@@ -162,8 +168,9 @@ class UserProfileVC: UIViewController, UITableViewDataSource {
                 targetController.currentEventTitle = attendTitle[indexPath.row]
                 targetController.currentEventLoc = attendLoc[indexPath.row]
                 targetController.currentEventEndTime = attendEndTime[indexPath.row]
-                targetController.currentEventid = attendid[indexPath.row]
+                targetController.currentEventUserId = attendUserId[indexPath.row]
                 targetController.currentEventDes = attendDes[indexPath.row]
+                targetController.currentEventid = attendid[indexPath.row]
                 targetController.currUser = currUser
             }
         }
